@@ -18,27 +18,30 @@ export default function POST(app: express.Express)
             if (!body.entry) return;
             if (body.entry.length < 0) return;
             
-            body.entry.forEach((event:
+            body.entry.forEach((entry: {messaging: []}) =>
             {
-                sender: { id: String },
-                recipient: { id: String },
-                timestamp: Date,
-                postback?: { title: String, payload: String },
-                message?: { text: String }
-            }) => 
-            {
-                const sender_id: String = event.sender.id;
-
-                if (event.postback)
+                entry.messaging.forEach((event:
                 {
-                    const data: { title: String, payload: String } = event.postback;
-                    if (data.payload == "GET_STARTED_PAYLOAD")
+                    sender: { id: String },
+                    recipient: { id: String },
+                    timestamp: Date,
+                    postback?: { title: String, payload: String },
+                    message?: { text: String }
+                }) => 
+                {
+                    const sender_id: String = event.sender.id;
+
+                    if (event.postback)
                     {
-                        const WELCOME_MESSAGE: String = "Xin chào bạn, đây là Phan Kiệt."
-                        sendData(sender_id, WELCOME_MESSAGE);
+                        const data: { title: String, payload: String } = event.postback;
+                        if (data.payload == "GET_STARTED_PAYLOAD")
+                        {
+                            const WELCOME_MESSAGE: String = "Xin chào bạn, đây là Phan Kiệt."
+                            sendData(sender_id, WELCOME_MESSAGE);
+                        }
                     }
-                }
+                });
             });
         }
-    })
+    });
 }
