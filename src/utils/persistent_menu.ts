@@ -6,9 +6,9 @@ const GetStartedButton = (res: express.Response) =>
     const messageData: Object = 
     {
         "get_started":
-        [{
+        {
             "payload": "GET_STARTED_PAYLOAD"
-        }]
+        }
     };
 
     request(
