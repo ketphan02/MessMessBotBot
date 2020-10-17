@@ -1,7 +1,7 @@
 import request from 'request';
 import express from 'express';
 
-const GetStartedButton = async (res: express.Response) =>
+const GetStartedButton = (res: express.Response) =>
 {
     const messageData: Object = 
     {
