@@ -11,7 +11,7 @@ export default function POST(app: express.Express)
 {
     app.post("/", (req: Request, res: Response) =>
     {
-        const body: {object: String, entry?: []} = req.body;
+        const body = req.body;
 
         if (body.object === 'page')
         {
