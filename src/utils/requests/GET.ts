@@ -1,5 +1,7 @@
 import express, { Request, Response } from 'express';
 
+import { GetStartedButton } from '../../utils/persistent_menu';
+
 /**
  * @description Connect FB page with Heroku server.
  * @param app From the webhook function.
@@ -23,5 +25,9 @@ export default function GET(app: express.Express)
             }
             else res.sendStatus(403);
         }
+
+
+        GetStartedButton(res);
+
     });
 }
