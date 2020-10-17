@@ -22,7 +22,7 @@ export default function sendData(id: String, text: String)
         {
             "Content-Type": "application/json"
         },
-        "form": messData
+        "json": messData
     }, (error, response, body) =>
     {
         if (error) console.log(`Unable to send message: ${error}`);
