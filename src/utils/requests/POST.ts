@@ -34,7 +34,7 @@ export default function POST(app: express.Express)
                     if (event.postback)
                     {
                         const data: { title: String, payload: String } = event.postback;
-                        if (data.payload == "GET_STARTED_PAYLOAD")
+                        if (data.payload === "GET_STARTED_PAYLOAD")
                         {
                             const WELCOME_MESSAGE: String = "Xin chào bạn, đây là Phan Kiệt."
                             sendData(sender_id, WELCOME_MESSAGE);
