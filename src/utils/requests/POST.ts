@@ -14,7 +14,15 @@ export default function POST(app: express.Express)
 
         if (body.object === 'page')
         {
-            console.log(body);
+            if (!body.entry) return;
+            if (body.entry.length < 0) return;
+
+            body.entry.forEach((event: any) =>
+            {
+                const data = event.messaging;
+
+                console.log(data);
+            });
         }
     })
 }
