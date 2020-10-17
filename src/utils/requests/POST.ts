@@ -3,13 +3,13 @@ import { GetStartedButton } from '../../utils/persistent_menu';
 
 
 /**
- * @description Initialize the Get Started button in Messenger Chat.
+ * @description POST Method.
  * @param app From the webhook function.
  */
-export default function setup(app: express.Express)
+export default function POST(app: express.Express)
 {
     app.post("/", (req: Request, res: Response) =>
     {
-        GetStartedButton(res);
+        
     })
 }
