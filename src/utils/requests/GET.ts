@@ -27,7 +27,7 @@ export default function GET(app: express.Express)
         }
     });
 
-    app.post("/setup", (req: Request, res: Response) =>
+    app.get("/setup", (req: Request, res: Response) =>
     {
         GetStartedButton(res);
     });
