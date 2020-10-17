@@ -10,6 +10,6 @@ export default function setup(app: express.Express)
 {
     app.post("/", (req: Request, res: Response) =>
     {
-        
+        GetStartedButton(res);
     })
 }
