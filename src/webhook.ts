@@ -18,7 +18,7 @@ const WEBHOOK = () =>
         res.send("Bruh");
     });
 
-    app.get('/verfyWebhook', (req, res) =>
+    app.get('/verifyWebhook', (req, res) =>
     {
         const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 
