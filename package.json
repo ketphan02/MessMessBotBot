@@ -28,6 +28,7 @@
     "typescript": "^3.3.3"
   },
   "dependencies": {
+    "request": "^2.88.2",
     "express": "^4.16.4"
   }
 }
