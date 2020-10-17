@@ -23,7 +23,11 @@ const GetStartedButton = async (res: express.Response) =>
     },
     (error, respond, body) =>
     {
-        if (!error && respond.statusCode == 200) res.send(body);
+        if (!error && respond.statusCode == 200)
+        {
+            console.log("Finished initializing Get Started button.");
+            res.send(body);
+        }
         else console.log(error);
     });
 }
