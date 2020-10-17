@@ -1,8 +1,8 @@
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 
-import verifyWebhook from './requests/verify';
-import setup from './requests/setup';
+import GET from './utils/requests/GET';
+import POST from './utils/requests/POST';
 
 
 const app = express();
@@ -17,15 +17,8 @@ const WEBHOOK = () =>
     app.use(bodyParser.json());
     app.use(express.urlencoded({ extended: false}));
 
-    verifyWebhook(app);
-    setup(app);
-
-    // app.post("/setup", (req: Request, res: Response) =>
-    // {
-    //     const data = req.body;
-
-    //     console.log(data);
-    // });
+    GET(app);
+    POST(app);
 
     // Start the server
     app.listen(port, () => console.log(`Listening on ${port}`));
