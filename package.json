@@ -1,0 +1,29 @@
+{
+  "name": "MessMessBotBot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ketphan02/MessMessBotBot.git"
+  },
+  "keywords": [],
+  "author": "PhanKiet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ketphan02/MessMessBotBot/issues"
+  },
+  "homepage": "https://github.com/ketphan02/MessMessBotBot#readme",
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
