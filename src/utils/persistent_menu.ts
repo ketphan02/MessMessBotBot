@@ -23,8 +23,8 @@ const GetStartedButton = async (res: express.Response) =>
     },
     (error, respond, body) =>
     {
-        if (!error && respond.statusCode === 200) res.status(200).send(body);
-        else res.sendStatus(403);
+        if (!error && respond.statusCode == 200) res.send(body);
+        else console.log(error);
     });
 }
 

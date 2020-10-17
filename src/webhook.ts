@@ -20,12 +20,12 @@ const WEBHOOK = () =>
     verifyWebhook(app);
     setup(app);
 
-    app.post("/setup", (req: Request, res: Response) =>
-    {
-        const data = req.body;
+    // app.post("/setup", (req: Request, res: Response) =>
+    // {
+    //     const data = req.body;
 
-        console.log(data);
-    });
+    //     console.log(data);
+    // });
 
     // Start the server
     app.listen(port, () => console.log(`Listening on ${port}`));
