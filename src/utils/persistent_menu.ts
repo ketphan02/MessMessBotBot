@@ -1,12 +1,13 @@
 import request from 'request';
+import express from 'express';
 
-const GetStarted = async () =>
+const GetStartedButton = async (res: express.Response) =>
 {
     const messageData: Object = 
     {
         "get_started":
         [{
-            "payload": "GET_STARTED"
+            "payload": "GET_STARTED_PAYLOAD"
         }]
     };
 
@@ -20,20 +21,12 @@ const GetStarted = async () =>
         },
         "form": messageData
     },
-    (err, res, body) =>
+    (error, respond, body) =>
     {
-        if (!err && res.statusCode === 200) console.log(body);
-        else console.log(err);
+        if (!error && respond.statusCode === 200) res.status(200).send(body);
+        else res.sendStatus(403);
     });
 }
 
-const __main__ = async () =>
-{
-    console.log("Loading persistent menu");
 
-    await GetStarted();
-
-    console.log("Finish loading persistent menu");
-}
-
-export default __main__;
+export { GetStartedButton };
