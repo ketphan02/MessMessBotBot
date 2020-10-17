@@ -25,8 +25,10 @@ export default function GET(app: express.Express)
             }
             else res.sendStatus(403);
         }
+    });
 
-        // Initialize the Get Started Button.
+    app.get("/setup", (req: Request, res: Response) =>
+    {
         GetStartedButton(res);
     });
 }
