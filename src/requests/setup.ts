@@ -8,7 +8,7 @@ import { GetStartedButton } from '../utils/persistent_menu';
  */
 export default function setup(app: express.Express)
 {
-    app.post("/setup", (req: Request, res: Response) =>
+    app.post("/", (req: Request, res: Response) =>
     {
         GetStartedButton(res);
     })
