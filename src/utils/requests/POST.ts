@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { GetStartedButton } from '../../utils/persistent_menu';
+import { GetStartedButton } from '../persistent_menu';
 
 
 /**
@@ -10,6 +10,11 @@ export default function POST(app: express.Express)
 {
     app.post("/", (req: Request, res: Response) =>
     {
-        
+        const body = req.body;
+
+        if (body.object === 'page')
+        {
+            console.log(body);
+        }
     })
 }

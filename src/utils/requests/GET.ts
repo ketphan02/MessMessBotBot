@@ -27,6 +27,7 @@ export default function GET(app: express.Express)
         }
     });
 
+    // Use this one time only.
     app.get("/setup", (req: Request, res: Response) =>
     {
         GetStartedButton(res);
