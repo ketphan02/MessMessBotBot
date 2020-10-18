@@ -2,6 +2,8 @@ import express, { Request, Response } from 'express';
 
 import { GetStartedButton } from '../../utils/persistent_menu';
 
+const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+
 /**
  * @description GET Method.
  * @param app From the webhook function.
@@ -10,7 +12,6 @@ export default function GET(app: express.Express)
 {
     app.get("/", (req: Request, res: Response) =>
     {
-        const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 
         const mode = req.query['hub.mode'];
         const token = req.query['hub.verify_token'];

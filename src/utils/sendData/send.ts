@@ -16,12 +16,12 @@ export default function sendData(id: String, text: String)
 
     request(
     {
-        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/messages?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
-        "method": "POST",
-        "headers":
+        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/messages`,
+        "qs":
         {
-            "Content-Type": "application/json"
+            "access_token": process.env.PAGE_ACCESS_TOKEN
         },
+        "method": "POST",
         "json": messData
     }, (error, response, body) =>
     {
