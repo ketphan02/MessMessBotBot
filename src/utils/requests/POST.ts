@@ -15,12 +15,11 @@ export default function POST(app: express.Express)
 
         if (body.object === 'page')
         {
-            if (!body.entry) return;
-            if (body.entry.length <= 0) return;
+            if (body.entry && body.entry.length <= 0) return;
             
             body.entry.forEach((entry: {messaging: []}) =>
             {
-                entry.messaging.forEach((event:
+                entry.messaging.forEach(async (event:
                 {
                     sender: { id: String },
                     recipient: { id: String },

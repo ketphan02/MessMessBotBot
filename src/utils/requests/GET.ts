@@ -1,4 +1,5 @@
 import express, { Request, Response } from 'express';
+import request from 'request';
 
 import { GetStartedButton } from '../../utils/persistent_menu';
 
@@ -23,14 +24,11 @@ export default function GET(app: express.Express)
             {
                 console.log('VERIFIED');
                 res.status(200).send(challenge);
+
+                // ONCE ONLY
+                GetStartedButton(res);
             }
             else res.sendStatus(403);
         }
-    });
-
-    // Use this one time only.
-    app.get("/setup", (req: Request, res: Response) =>
-    {
-        GetStartedButton(res);
     });
 }
