@@ -36,9 +36,14 @@ export default function POST(app: express.Express)
                         const data: { title: String, payload: String } = event.postback;
                         if (data.payload === "GET_STARTED_PAYLOAD")
                         {
-                            const WELCOME_MESSAGE: String = "Xin chào bạn, đây là Phan Kiệt."
+                            const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
                             sendData(sender_id, WELCOME_MESSAGE);
                         }
+                    }
+                    else if (event.message)
+                    {
+                        const data: { text: String } = event.message;
+                        sendData(sender_id, "[USER'S MESSAGE]\n" + data.text;
                     }
                 });
             });
