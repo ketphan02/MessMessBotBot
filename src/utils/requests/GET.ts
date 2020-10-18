@@ -11,7 +11,7 @@ const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
  */
 export default function GET(app: express.Express)
 {
-    app.get("/", (req: Request, res: Response) =>
+    app.get("/webhook", (req: Request, res: Response) =>
     {
 
         const mode = req.query['hub.mode'];
