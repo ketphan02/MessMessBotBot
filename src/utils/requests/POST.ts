@@ -16,6 +16,8 @@ export default function POST(app: express.Express)
         if (body.object === 'page')
         {
             if (body.entry && body.entry.length <= 0) return;
+
+            console.log(body.entry);
             
             body.entry.forEach((entry: {messaging: []}) =>
             {
