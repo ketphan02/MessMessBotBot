@@ -49,5 +49,7 @@ export default function POST(app: express.Express)
                 });
             });
         }
+
+        res.sendStatus(200);
     });
 }
