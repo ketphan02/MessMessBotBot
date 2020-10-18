@@ -20,7 +20,7 @@ export default function POST(app: express.Express)
             
             body.entry.forEach((entry: {messaging: []}) =>
             {
-                entry.messaging.forEach(async (event:
+                entry.messaging.forEach((event:
                 {
                     sender: { id: String },
                     recipient: { id: String },
@@ -37,13 +37,13 @@ export default function POST(app: express.Express)
                         if (data.payload === "GET_STARTED_PAYLOAD")
                         {
                             const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
-                            await sendData(sender_id, WELCOME_MESSAGE);
+                            sendData(sender_id, WELCOME_MESSAGE);
                         }
                     }
                     else if (event.message)
                     {
                         const data: { text: String } = event.message;
-                        await sendData(sender_id, "[USER'S MESSAGE]\n" + data.text);
+                        sendData(sender_id, "[USER'S MESSAGE]\n" + data.text);
                     }
                 });
             });

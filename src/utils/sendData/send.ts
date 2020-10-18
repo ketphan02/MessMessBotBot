@@ -1,6 +1,6 @@
 import request from "request";
 
-export default async function sendData(id: String, text: String)
+export default function sendData(id: String, text: String)
 {
     const messData = 
     {
@@ -14,7 +14,7 @@ export default async function sendData(id: String, text: String)
         }
     };
 
-    await request(
+    request(
     {
         "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/messages?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
         "method": "POST",
@@ -22,7 +22,7 @@ export default async function sendData(id: String, text: String)
         {
             "Content-Type": "application/json"
         },
-        "form": messData
+        "json": messData
     }, (error, response, body) =>
     {
         if (error) console.log(`Unable to send message: ${error}`);
