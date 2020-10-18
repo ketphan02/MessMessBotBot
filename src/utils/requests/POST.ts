@@ -43,7 +43,7 @@ export default function POST(app: express.Express)
                     else if (event.message)
                     {
                         const data: { text: String } = event.message;
-                        sendData(sender_id, "[USER'S MESSAGE]\n" + data.text;
+                        sendData(sender_id, "[USER'S MESSAGE]\n" + data.text);
                     }
                 });
             });
