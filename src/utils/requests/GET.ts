@@ -1,7 +1,6 @@
 import express, { Request, Response } from 'express';
-import request from 'request';
 
-import { GetStartedButton, StartingMenu } from '../../utils/persistent_menu';
+import { GetStartedButton } from '../../utils/persistent_menu';
 
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 
@@ -30,7 +29,5 @@ export default function GET(app: express.Express)
             }
             else res.sendStatus(403);
         }
-
-        StartingMenu(res);
     });
 }
