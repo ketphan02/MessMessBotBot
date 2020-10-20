@@ -65,7 +65,11 @@ export default function POST(app: express.Express)
                         const data: { text: String } = event.message;
                         if (ok)
                         {
-                            if (data.text === "!!!") sendData(sender_id, "ok, i'll stop repeating you");
+                            if (data.text === "!!!")
+                            {
+                                sendData(sender_id, "ok, i'll stop repeating you");
+                                ok = false;
+                            }
                             else sendData(sender_id, "[USER'S MESSAGE]\n" + data.text);
                         }
                         else sendData(sender_id, "Please use the menu");
