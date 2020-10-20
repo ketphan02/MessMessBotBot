@@ -5,7 +5,6 @@ import sendData from '../sendData/send';
 
 
 let ok = false;
-let starting_menu = false;
 
 /**
  * @description POST Method.
@@ -19,12 +18,6 @@ export default function POST(app: express.Express)
 
         if (body.object === 'page')
         {
-
-            if (!starting_menu)
-            {
-                StartingMenu(res);
-                starting_menu = true;
-            }
 
             if (body.entry && body.entry.length <= 0) return;
             
