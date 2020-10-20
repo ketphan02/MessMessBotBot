@@ -22,7 +22,6 @@ export default function POST(app: express.Express)
             
             body.entry.forEach((entry: {messaging: []}) =>
             {
-                console.log(entry.messaging);
 
                 entry.messaging.forEach(async (event:
                 {
