@@ -1,6 +1,6 @@
 import WEBHOOK from './webhook';
 
-import axios from 'axios';
+import schedule from 'node-schedule';
 
 async function __main__()
 {
@@ -10,12 +10,10 @@ async function __main__()
 
 async function keepAlive()
 {
-    setInterval(async () =>
+    schedule.scheduleJob('* /10 * * * *', () =>
     {
-        const url = `https://${process.env.APP_NAME}.herokuapp.com`;
-
-        await axios.get(url);
-    }, 19 * 60 * 1000);
+        console.log("I know, you know, we all know.");
+    });
 }
 
 
