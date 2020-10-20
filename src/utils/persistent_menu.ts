@@ -1,5 +1,5 @@
 import request from 'request';
-import express from 'express';
+import express, { Response } from 'express';
 
 const GetStartedButton = (res: express.Response) =>
 {
@@ -32,5 +32,47 @@ const GetStartedButton = (res: express.Response) =>
     });
 }
 
+const StartingMenu = (res: express.Response) =>
+{
+    const categories: Object =
+    {
+        "locale": "default",
+        "composer_input_disabled": false,
+        "call_to_actions":
+        [
+            {
+                type: "postback",
+                title: "Build your first bot",
+                payload: "STEP 0"
+            },
+            {
+                type: "postback",
+                title: "About us",
+                payload: "STEP 0"
+            }
+        ]
+    }
 
-export { GetStartedButton };
+    request(
+    {
+        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+        "method": "POST",
+        "headers":
+        {
+            'Content-Type': 'application/json'
+        },
+        "form": categories
+    },
+    (error, respond, body) =>
+    {
+        if (!error && respond.statusCode == 200)
+        {
+            console.log("Successfully built the starting menu.");
+            res.send(body);
+        }
+        else console.log(error);
+    });
+}
+
+
+export { GetStartedButton, StartingMenu };
