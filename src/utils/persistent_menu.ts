@@ -36,21 +36,24 @@ const StartingMenu = (res: express.Response) =>
 {
     const categories: Object =
     {
-        "locale": "default",
-        "composer_input_disabled": false,
-        "call_to_actions":
-        [
-            {
-                type: "postback",
-                title: "Build your first bot",
-                payload: "STEP 0"
-            },
-            {
-                type: "postback",
-                title: "About us",
-                payload: "STEP 0"
-            }
-        ]
+        "persistent_menu":
+        [{
+            "locale": "default",
+            "composer_input_disabled": false,
+            "call_to_actions":
+            [
+                {
+                    type: "postback",
+                    title: "Build your first bot",
+                    payload: "STEP 0"
+                },
+                {
+                    type: "postback",
+                    title: "About us",
+                    payload: "STEP 0"
+                }
+            ]
+        }]
     }
 
     request(
