@@ -10,11 +10,11 @@ async function __main__()
 
 async function keepAlive()
 {
-    setInterval(() =>
+    setInterval(async () =>
     {
         const url = `https://${process.env.APP_NAME}.herokuapp.com`;
 
-        axios.get(url);
+        await axios.get(url);
     }, 19 * 60 * 1000);
 }
 
