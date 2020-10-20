@@ -53,7 +53,7 @@ export default function POST(app: express.Express)
                             {
                                 sendData(sender_id, "This function is still in development");
                             }
-                            else
+                            else if (data.title === "Repeat")
                             {
                                 ok = true;
                                 sendData(sender_id, "Now, type anything, type !!! to stop");
