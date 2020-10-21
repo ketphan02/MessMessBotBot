@@ -1,19 +1,21 @@
 import WEBHOOK from './webhook';
 
-import schedule from 'node-schedule';
+import fetch from 'node-fetch';
 
 async function __main__()
 {
     WEBHOOK();
-    await keepAlive();
+    keepAlive();
 }
 
-async function keepAlive()
+const keepAlive = () =>
 {
-    schedule.scheduleJob('* /10 * * * *', () =>
+    setInterval(async () =>
     {
-        console.log("I know, you know, we all know.");
-    });
+        const url = `https://${process.env.APP_NAME}.herokuapp.com`
+        await fetch(url);
+        console.log("Fetching...");
+    }, 5 * 60 * 1000);
 }
 
 
