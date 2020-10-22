@@ -135,7 +135,7 @@ const StageOneMenu = (sender_id: String) =>
         else
         {
             console.log(respond.statusCode);
-            console.log("StartingMenu: " + error);
+            console.log("Stage 1: " + error);
         }
     });
 }
@@ -178,12 +178,12 @@ const StageTwoMenu = (sender_id: String) =>
     {
         if (!error && respond.statusCode == 200)
         {
-            console.log("Successfully built the stage 1 menu.");
+            console.log("Successfully built the stage 2 menu.");
         }
         else
         {
             console.log(respond.statusCode);
-            console.log("StartingMenu: " + error);
+            console.log("Stage 2: " + error);
         }
     });
 }
@@ -226,12 +226,12 @@ const StageThreeMenu = (sender_id: String) =>
     {
         if (!error && respond.statusCode == 200)
         {
-            console.log("Successfully built the stage 1 menu.");
+            console.log("Successfully built the stage 3 menu.");
         }
         else
         {
             console.log(respond.statusCode);
-            console.log("StartingMenu: " + error);
+            console.log("Stage 3: " + error);
         }
     });
 }
