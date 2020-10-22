@@ -162,7 +162,7 @@ const StageTwoMenu = (sender_id: String) =>
             [
                 {
                     type: "postback",
-                    title: "I have pressed the button",
+                    title: "Pressed the button",
                     payload: "STEP 2"
                 },
                 {
@@ -215,7 +215,7 @@ const StageThreeMenu = (sender_id: String) =>
             [
                 {
                     type: "postback",
-                    title: "I have named my bot",
+                    title: "Named it",
                     payload: "STEP 3"
                 },
                 {
@@ -436,7 +436,7 @@ const StageSix01Menu = (sender_id: String) =>
             [
                 {
                     type: "postback",
-                    title: "I have filled them",
+                    title: "Filled them all",
                     payload: "STEP 6.1"
                 },
                 {

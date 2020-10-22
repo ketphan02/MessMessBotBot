@@ -1,7 +1,7 @@
 import { StageSevenMenu } from "../persistent_menu";
 import { title_arr } from "../requests/POST";
 import sendData from "../sendData/send";
-import stageFive from "./five";
+import stageSix from "./six";
 
 const stageSix01 = (sender_id: String, title: String) =>
 {
@@ -9,7 +9,7 @@ const stageSix01 = (sender_id: String, title: String) =>
     let arr = title_arr[index].arr;
 
     arr.push(title);
-    if (title === "I have filled them")
+    if (title === "Fill them all")
     {
         StageSevenMenu(sender_id);
 
@@ -22,7 +22,7 @@ const stageSix01 = (sender_id: String, title: String) =>
     {
         arr.pop();
         arr.pop();
-        stageFive(sender_id, arr[-1]);
+        stageSix(sender_id, arr[-1]);
     }
 
     title_arr[index].arr = arr;
