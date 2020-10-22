@@ -36,10 +36,11 @@ const GetStartedButton = (res: express.Response) =>
     });
 }
 
-const StartingMenu = (res: express.Response) =>
+const StartingMenu = (res: express.Response, sender_id: String) =>
 {
     const categories: Object =
     {
+        psid: sender_id,
         persistent_menu:
         [{
             locale: "default",
@@ -67,7 +68,7 @@ const StartingMenu = (res: express.Response) =>
 
     request(
     {
-        "url": `https://graph.facebook.com/v/v2.6/me/messenger_profile?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+        "url": `https://graph.facebook.com/v/v${process.env.FB_GRAPH_API_VERSION}/me/messenger_profile?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
         "method": "POST",
         "headers":
         {
