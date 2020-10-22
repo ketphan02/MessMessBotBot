@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { GetStartedButton, StartingMenu } from '../persistent_menu';
+import { StartingMenu } from '../persistent_menu';
 
 import sendData from '../sendData/send';
 
@@ -40,7 +40,7 @@ export default function POST(app: express.Express)
                         const data: { title: String, payload: String } = event.postback;
                         if (data.payload === "GET_STARTED_PAYLOAD")
                         {
-                            GetStartedButton(res);
+                            StartingMenu(res);
                             
                             const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
                             sendData(sender_id, WELCOME_MESSAGE);
