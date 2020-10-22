@@ -26,12 +26,10 @@ export default function GET(app: express.Express)
 
                 console.log('VERIFIED');
                 res.status(200).send(challenge);
-                return;
             }
             else
             {
                 res.sendStatus(403);
-                return;
             }
         }
     });

@@ -31,7 +31,6 @@ const GetStartedButton = (res: express.Response) =>
         else
         {
             console.log("GetStartedButton: " + error);
-            return;
         }
     });
 }
@@ -85,7 +84,6 @@ const StartingMenu = (res: express.Response) =>
         else
         {
             console.log("StartingMenu: " + error);
-            return;
         }
     });
 }
