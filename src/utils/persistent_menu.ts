@@ -56,11 +56,6 @@ const StartingMenu = (res: express.Response, sender_id: String) =>
                     type: "postback",
                     title: "About us",
                     payload: "STEP 0"
-                },
-                {
-                    type: "postback",
-                    title: "Repeat",
-                    payload: "STEP 0"
                 }
             ]
         }]
