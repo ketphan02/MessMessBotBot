@@ -111,6 +111,11 @@ const StageOneMenu = (sender_id: String) =>
                     type: "postback",
                     title: "Messenger Bot",
                     payload: "STEP 1"
+                },
+                {
+                    type: "postback",
+                    title: "Go back",
+                    payload: "STEP 1"
                 }
             ]
         }]

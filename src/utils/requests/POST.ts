@@ -32,6 +32,8 @@ export default function POST(app: express.Express)
                 {
                     const sender_id: String = event.sender.id;
 
+                    console.log(sender_id);
+
                     if (event.postback)
                     {
                         const data: { title: String, payload: String } = event.postback;
@@ -66,6 +68,10 @@ export default function POST(app: express.Express)
                             else if (data.title === "Messenger Bot")
                             {
                                 sendData(sender_id, "Sorry, this function is currently in development.")
+                            }
+                            else if (data.title == "Go back")
+                            {
+                                StartingMenu(sender_id);
                             }
                         }
                         else if (data.payload === "STEP 2")
