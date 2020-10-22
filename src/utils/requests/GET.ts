@@ -24,32 +24,10 @@ export default function GET(app: express.Express)
                 console.log('VERIFIED');
                 res.status(200).send(challenge);
 
-                // ONCE ONLY
-                try
-                {
-                    GetStartedButton(res);
-                }
-                catch
-                {
-                    console.log("Already exist");
-                }
-                try
-                {
-                    StartingMenu(res);
-                }
-                catch
-                {
-                    console.log("Already exist");
-                }
+                GetStartedButton(res);
             }
             else res.sendStatus(403);
         }
     });
-
-    app.get("/setup", (req: Request, res: Response) =>
-    {
-        GetStartedButton(res);
-        StartingMenu(res);
-    })
 }
 

@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { StartingMenu } from '../persistent_menu';
+import { GetStartedButton, StartingMenu } from '../persistent_menu';
 
 import sendData from '../sendData/send';
 
@@ -18,6 +18,7 @@ export default function POST(app: express.Express)
 
         if (body.object === 'page')
         {
+            GetStartedButton(res);
 
             if (body.entry && body.entry.length <= 0) return;
             
