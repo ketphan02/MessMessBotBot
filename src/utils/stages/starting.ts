@@ -3,12 +3,12 @@ import { StartingMenu } from "../persistent_menu";
 import { title_arr } from "../requests/POST";
 import sendData from "../sendData/send";
 
-const startingStage = (sender_id: String) =>
+const startingStage = async (sender_id: String) =>
 {
     StartingMenu(sender_id);
 
     const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
-    sendData(sender_id, WELCOME_MESSAGE);
+    await sendData(sender_id, WELCOME_MESSAGE);
 
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     const new_usr_data: { user_id: String, arr: String[] } =

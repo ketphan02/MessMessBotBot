@@ -47,43 +47,43 @@ export default function POST(app: express.Express)
                         const data: { title: String, payload: String } = event.postback;
                         if (data.payload === "GET_STARTED_PAYLOAD")
                         {                            
-                            startingStage(sender_id);
+                            await startingStage(sender_id);
                         }
                         else if (data.payload === "STEP 0")
                         {
-                            stageZero(sender_id, data.title);
+                            await stageZero(sender_id, data.title);
                         }
                         else if (data.payload === "STEP 1")
                         {
-                            stageOne(sender_id, data.title);
+                            await stageOne(sender_id, data.title);
                         }
                         else if (data.payload === "STEP 2")
                         {
-                            stageTwo(sender_id, data.title);
+                            await stageTwo(sender_id, data.title);
                         }
                         else if (data.payload === "STEP 3")
                         {
-                            stageThree(sender_id, data.title);
+                            await stageThree(sender_id, data.title);
                         }
                         else if (data.payload === "STEP 4")
                         {
-                            stageFour(sender_id, data.title);
+                            await stageFour(sender_id, data.title);
                         }
                         else if (data.payload === "STEP 5")
                         {
-                            stageFive(sender_id, data.title);
+                            await stageFive(sender_id, data.title);
                         }
                         else if (data.payload === "STEP 6")
                         {
-                            stageSix(sender_id, data.title);
+                            await stageSix(sender_id, data.title);
                         }
                         else if (data.payload === "STEP 6.1")
                         {
-                            stageSix01(sender_id, data.title);
+                            await stageSix01(sender_id, data.title);
                         }
                         else if (data.payload === "STEP 7")
                         {
-                            stageSeven(sender_id, data.title);
+                            await stageSeven(sender_id, data.title);
                         }
                     }
                     else if (event.message) return;

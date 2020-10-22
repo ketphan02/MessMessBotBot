@@ -1,6 +1,6 @@
 import request from "request";
 
-export default function sendData(id: String, text: String)
+export default async function sendData(id: String, text: String)
 {
     const messData = 
     {
