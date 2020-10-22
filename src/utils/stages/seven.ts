@@ -9,10 +9,10 @@ const stageSeven = async (sender_id: String, title: String) =>
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     let arr = title_arr[index].arr;
 
-    arr.push(title);
     if (title === "Permission granted")
     {
         StageFinalMenu(sender_id);
+        arr.push(title);
 
         const msg: String = "Congratulation! Your bot is ready to go.\n\n" +
         "Thank you for using me, I appreciate that.";
@@ -21,7 +21,6 @@ const stageSeven = async (sender_id: String, title: String) =>
     }
     else if (title == "Go back")
     {
-        arr.pop();
         arr.pop();
         if (arr[-1] === "Extra customization") await stageSix(sender_id, arr[-1]);
         else await stageFive(sender_id, arr[-1]);

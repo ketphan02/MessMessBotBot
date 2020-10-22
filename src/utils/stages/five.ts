@@ -8,10 +8,10 @@ const stageFive = async (sender_id: String, title: String) =>
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     let arr = title_arr[index].arr;
 
-    arr.push(title);
     if (title === "Got the token")
     {
         StageSixMenu(sender_id);
+        arr.push(title);
 
         const msg: String = "Nice!\n" +
         `Remember the token you coppied from last step? Now, type DISCORD_TOKEN into the KEY part, and paste the coppied token into the VALUE part\n\n` +
@@ -22,7 +22,6 @@ const stageFive = async (sender_id: String, title: String) =>
     }
     else if (title == "Go back")
     {
-        arr.pop();
         arr.pop();
         await stageThree(sender_id, arr[-1]);
     }

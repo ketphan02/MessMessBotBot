@@ -8,10 +8,10 @@ const stageFour = async (sender_id: String, title: String) =>
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     let arr = title_arr[index].arr;
 
-    arr.push(title);
     if (title === "Revealed the variables")
     {
         StageFiveMenu(sender_id);
+        arr.push(title);
 
         const msg: String = "Perfect! Now, please go to this link (https://discord.com/developers/applications), create new application, and fill your bot's display name.\n" +
         "After that, go to the Bot tab and add new bot.\n" +
@@ -21,7 +21,6 @@ const stageFour = async (sender_id: String, title: String) =>
     }
     else if (title == "Go back")
     {
-        arr.pop();
         arr.pop();
         await stageTwo(sender_id, arr[-1]);
     }
