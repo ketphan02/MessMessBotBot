@@ -84,6 +84,7 @@ const StartingMenu = (res: express.Response) =>
         }
         else
         {
+            console.log(respond.statusCode);
             console.log("StartingMenu: " + error);
         }
         return;
