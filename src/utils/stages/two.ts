@@ -8,7 +8,7 @@ const stageTwo = async (sender_id: String, title: String) =>
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     let arr = title_arr[index].arr;
 
-    if (title === "Pressed the button")
+    if (title == "Pressed the button")
     {
         StageThreeMenu(sender_id);
         arr.push(title);

@@ -8,7 +8,7 @@ const stageFive = async (sender_id: String, title: String) =>
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     let arr = title_arr[index].arr;
 
-    if (title === "Got the token")
+    if (title == "Got the token")
     {
         StageSixMenu(sender_id);
         arr.push(title);

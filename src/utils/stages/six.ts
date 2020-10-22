@@ -9,7 +9,7 @@ const stageSix = async (sender_id: String, title: String) =>
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     let arr = title_arr[index].arr;
 
-    if (title === "I have filled them")
+    if (title == "I have filled them")
     {
         StageSevenMenu(sender_id);
         arr.push(title);
@@ -21,7 +21,7 @@ const stageSix = async (sender_id: String, title: String) =>
 
         await sendData(sender_id, msg);
     }
-    else if (title === "Extra customization")
+    else if (title == "Extra customization")
     {
         StageSix01Menu(sender_id);
         arr.push(title);

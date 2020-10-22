@@ -9,7 +9,7 @@ const stageSeven = async (sender_id: String, title: String) =>
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     let arr = title_arr[index].arr;
 
-    if (title === "Permission granted")
+    if (title == "Permission granted")
     {
         StageFinalMenu(sender_id);
         arr.push(title);

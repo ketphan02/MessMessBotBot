@@ -8,7 +8,7 @@ const stageOne = async (sender_id: String, title: String) =>
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     let arr = title_arr[index].arr;
 
-    if (title === "Discord Bot")
+    if (title == "Discord Bot")
     {
         StageTwoMenu(sender_id);
         arr.push(title);
@@ -24,7 +24,7 @@ const stageOne = async (sender_id: String, title: String) =>
     {
         await sendData(sender_id, "Sorry, this function is currently in development.")
     }
-    else if (title === "Go back")
+    else if (title == "Go back")
     {
         arr.pop();
         await startingStage(sender_id);

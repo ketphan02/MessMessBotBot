@@ -11,7 +11,7 @@ const stageZero = async (sender_id: String, title: String) =>
     {
         await sendData(sender_id, "Create by Phan Kiet");
     }
-    else if (title === "Build your first bot")
+    else if (title == "Build your first bot")
     {
         arr.push(title);
 
