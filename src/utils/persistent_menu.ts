@@ -527,6 +527,54 @@ const StageSevenMenu = (sender_id: String) =>
     });
 }
 
+/**
+ * @description "Answer for question does your bot have enough permission ?".
+ * @param {sender_id} String The id of the sender
+ */
+const StageFinalMenu = (sender_id: String) =>
+{
+    const categories: Object =
+    {
+        psid: sender_id,
+        persistent_menu:
+        [{
+            locale: "default",
+            composer_input_disabled: true,
+            call_to_actions:
+            [
+                {
+                    type: "postback",
+                    title: "Start over",
+                    payload: "GET_STARTED_PAYLOAD"
+                }
+            ]
+        }]
+    }
+
+    request(
+    {
+        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+        "method": "POST",
+        "headers":
+        {
+            'Content-Type': 'application/json'
+        },
+        "form": categories
+    },
+    (error, respond, body) =>
+    {
+        if (!error && respond.statusCode == 200)
+        {
+            console.log("Successfully restart the process.");
+        }
+        else
+        {
+            console.log(respond.statusCode);
+            console.log("Stage final: " + error);
+        }
+    });
+}
+
 export {
     GetStartedButton,
     StartingMenu,
@@ -537,5 +585,6 @@ export {
     StageFiveMenu,
     StageSixMenu,
     StageSix01Menu,
-    StageSevenMenu
+    StageSevenMenu,
+    StageFinalMenu
 };

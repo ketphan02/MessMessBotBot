@@ -85,6 +85,8 @@ export default function POST(app: express.Express)
                         {
                             await stageSeven(sender_id, data.title);
                         }
+
+                        console.log(title_arr);
                     }
                     else if (event.message) return;
                 });

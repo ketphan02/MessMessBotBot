@@ -1,3 +1,4 @@
+import { StageFinalMenu } from "../persistent_menu";
 import { title_arr } from "../requests/POST";
 import sendData from "../sendData/send";
 import stageFive from "./five";
@@ -11,8 +12,9 @@ const stageSeven = async (sender_id: String, title: String) =>
     arr.push(title);
     if (title === "Permission granted")
     {
-        const msg: String = "Congratulation! Your bot is ready to go.\n" +
-        "If you want to do this again, delete this chat and start over.\n" +
+        StageFinalMenu(sender_id);
+
+        const msg: String = "Congratulation! Your bot is ready to go.\n\n" +
         "Thank you for using me, I appreciate that.";
 
         await sendData(sender_id, msg);
