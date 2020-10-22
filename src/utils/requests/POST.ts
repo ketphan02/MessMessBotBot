@@ -39,8 +39,6 @@ export default function POST(app: express.Express)
                         const data: { title: String, payload: String } = event.postback;
                         if (data.payload === "GET_STARTED_PAYLOAD")
                         {                            
-                            StartingMenu(sender_id);
-                            
                             const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
                             sendData(sender_id, WELCOME_MESSAGE);
                         }
@@ -53,6 +51,7 @@ export default function POST(app: express.Express)
                             else if (data.title === "Build your first bot")
                             {
                                 StageOneMenu(sender_id);
+
                                 sendData(sender_id, "What kind of bot you want to build ?");
                             }
                         }
@@ -61,6 +60,7 @@ export default function POST(app: express.Express)
                             if (data.title === "Discord Bot")
                             {
                                 StageTwoMenu(sender_id);
+                                
                                 sendData(sender_id, "Welcome to Discord Bot Guild. I will guild step-by-step to create your Discord Bot.");
                                 sendData(sender_id, "First, follow this link (https://j2c.cc/customizediscordbot), scroll down and hit the purple button");
                                 sendData(sender_id, "The password for the link is DiscordBot");
@@ -79,11 +79,11 @@ export default function POST(app: express.Express)
                             if (data.title === "I have pressed Deploy to Heroku")
                             {
                                 StageThreeMenu(sender_id);
-                                sendData(sender_id, "Welcome to Discord Bot Guild. I will guild step-by-step to create your Discord Bot.");
-                                sendData(sender_id, "First, follow this link (https://j2c.cc/customizediscordbot), scroll down and hit the purple button");
-                                sendData(sender_id, "The password for the link is DiscordBot");
                             }
-
+                            else if (data.title == "Go back")
+                            {
+                                StageOneMenu(sender_id);
+                            }
                         }
                     }
                     else if (event.message) return;
