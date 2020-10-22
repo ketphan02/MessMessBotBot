@@ -11,7 +11,7 @@
     - README<span>.</span>md ⟶ This file, which let people understand what is in this project.
 
 ## Deploy
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ketphan02/customizable-discord-bot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://github.com/ketphan02/MessMessBotBot/tree/master/src/template/discord/music/customizable-discord-bot)
 
 ## Environment variables
     Note that all the variables must be assigned in Config Vars under Settings tab in Heroku.
