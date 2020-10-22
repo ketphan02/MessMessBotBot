@@ -39,47 +39,47 @@ const StartingMenu = (res: express.Response) =>
         persistent_menu:
         [{
             locale: "default",
-            composer_input_disabled: false,
+            composer_input_disabled: true,
             call_to_actions:
             [
                 {
-                    type: "postback",
+                    type: "nested",
                     title: "Build your first bot",
                     payload: "STEP 0",
                     call_to_actions:
                     [
                         {
-                            type: "postback",
+                            type: "nested",
                             title: "Discord",
                             payload: "STEP 1",
                             call_to_actions:
                             [{
-                                type: "postback",
+                                type: "nested",
                                 title: "I have pressed deployed.",
                                 payload: "STEP 2",
                                 call_to_actions:
                                 [{
-                                    type: "postback",
+                                    type: "nested",
                                     title: "I have filled in the name",
                                     payload: "STEP 3",
                                     call_to_actions:
                                     [{
-                                        type: "postback",
+                                        type: "nested",
                                         title: "I have pressed the button Reveal Config Vars",
                                         payload: "STEP 4",
                                         call_to_actions:
                                         [{
-                                            type: "postback",
+                                            type: "nested",
                                             title: "I have created my Discord bot",
                                             payload: "STEP 5",
                                             call_to_actions:
                                             {
-                                                type: "postback",
+                                                type: "nested",
                                                 title: "I have coppied my Discord bot's token",
                                                 payload: "STEP 6",
                                                 call_to_actions:
                                                 {
-                                                    type: "postback",
+                                                    type: "nested",
                                                     title: "I have added APP_NAME and DISCORD_TOKEN",
                                                     payload: "STEP 7",
                                                     call_to_actions:
@@ -118,7 +118,7 @@ const StartingMenu = (res: express.Response) =>
 
     request(
     {
-        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+        "url": `https://graph.facebook.com/v2.6/me/messenger_profile?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
         "method": "POST",
         "headers":
         {

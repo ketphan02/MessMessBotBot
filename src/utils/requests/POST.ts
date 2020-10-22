@@ -43,15 +43,11 @@ export default function POST(app: express.Express)
                             const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
                             sendData(sender_id, WELCOME_MESSAGE);
                         }
-                        else (data.payload === "STEP 0")
+                        else if (data.payload === "STEP 0")
                         {
                             if (data.title === "About us")
                             {
                                 sendData(sender_id, "[INTRO]");
-                            }
-                            else if (data.title === "Build your first bot")
-                            {
-                                sendData(sender_id, "This function is still in development");
                             }
                             else if (data.title === "Repeat")
                             {
