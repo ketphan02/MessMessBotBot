@@ -154,11 +154,18 @@ const StageTwoMenu = (sender_id: String) =>
             locale: "default",
             composer_input_disabled: true,
             call_to_actions:
-            {
-                type: "postback",
-                title: "I have pressed Deploy to Heroku",
-                payload: "STEP 2"
-            }
+            [
+                {
+                    type: "postback",
+                    title: "I have pressed Deploy to Heroku Button",
+                    payload: "STEP 2"
+                },
+                {
+                    type: "postback",
+                    title: "Go back",
+                    payload: "STEP 2"
+                }
+            ]
         }]
     }
 
