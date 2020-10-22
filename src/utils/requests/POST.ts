@@ -39,9 +39,7 @@ export default function POST(app: express.Express)
                     {
                         const data: { title: String, payload: String } = event.postback;
                         if (data.payload === "GET_STARTED_PAYLOAD")
-                        {
-                            StartingMenu(res);
-                            
+                        {                            
                             const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
                             sendData(sender_id, WELCOME_MESSAGE);
                         }

@@ -29,5 +29,10 @@ export default function GET(app: express.Express)
             else res.sendStatus(403);
         }
     });
+
+    app.get("/setup", (req, res) =>
+    {
+        StartingMenu(res);
+    });
 }
 
