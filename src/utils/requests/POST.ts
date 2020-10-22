@@ -23,6 +23,7 @@ export default function POST(app: express.Express)
             
             body.entry.forEach((entry: {messaging: []}) =>
             {
+                StartingMenu(res);
 
                 entry.messaging.forEach(async (event:
                 {

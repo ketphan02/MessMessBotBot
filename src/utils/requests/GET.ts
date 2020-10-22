@@ -26,7 +26,6 @@ export default function GET(app: express.Express)
 
                 // ONCE ONLY
                 GetStartedButton(res);
-                StartingMenu(res);
             }
             else res.sendStatus(403);
         }
