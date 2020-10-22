@@ -41,6 +41,7 @@ export default function POST(app: express.Express)
                             
                             const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
                             sendData(sender_id, WELCOME_MESSAGE);
+                            return;
                         }
                         else if (data.payload === "STEP 0")
                         {
@@ -52,6 +53,7 @@ export default function POST(app: express.Express)
                             {
                                 sendData(sender_id, "This function is still in development");
                             }
+                            return;
                         }
                     }
                 });
