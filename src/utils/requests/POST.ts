@@ -42,7 +42,7 @@ export default function POST(app: express.Express)
                             const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
                             sendData(sender_id, WELCOME_MESSAGE);
                         }
-                        else (data.payload === "STEP 0")
+                        else if (data.payload === "STEP 0")
                         {
                             if (data.title === "About us")
                             {
