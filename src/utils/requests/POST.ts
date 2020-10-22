@@ -18,7 +18,6 @@ export default function POST(app: express.Express)
 
         if (body.object === 'page')
         {
-            GetStartedButton(res);
 
             if (body.entry && body.entry.length <= 0) return;
             
@@ -41,14 +40,20 @@ export default function POST(app: express.Express)
                         const data: { title: String, payload: String } = event.postback;
                         if (data.payload === "GET_STARTED_PAYLOAD")
                         {
+                            GetStartedButton(res);
+                            
                             const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
                             sendData(sender_id, WELCOME_MESSAGE);
                         }
-                        else if (data.payload === "STEP 0")
+                        else (data.payload === "STEP 0")
                         {
                             if (data.title === "About us")
                             {
                                 sendData(sender_id, "[INTRO]");
+                            }
+                            else if (data.title === "Build your first bot")
+                            {
+                                sendData(sender_id, "This function is still in development");
                             }
                             else if (data.title === "Repeat")
                             {

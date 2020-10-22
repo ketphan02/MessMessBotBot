@@ -43,64 +43,9 @@ const StartingMenu = (res: express.Response) =>
             call_to_actions:
             [
                 {
-                    type: "nested",
+                    type: "postback",
                     title: "Build your first bot",
-                    payload: "STEP 0",
-                    call_to_actions:
-                    [
-                        {
-                            type: "nested",
-                            title: "Discord",
-                            payload: "STEP 1",
-                            call_to_actions:
-                            [{
-                                type: "nested",
-                                title: "I have pressed deployed.",
-                                payload: "STEP 2",
-                                call_to_actions:
-                                [{
-                                    type: "nested",
-                                    title: "I have filled in the name",
-                                    payload: "STEP 3",
-                                    call_to_actions:
-                                    [{
-                                        type: "nested",
-                                        title: "I have pressed the button Reveal Config Vars",
-                                        payload: "STEP 4",
-                                        call_to_actions:
-                                        [{
-                                            type: "nested",
-                                            title: "I have created my Discord bot",
-                                            payload: "STEP 5",
-                                            call_to_actions:
-                                            {
-                                                type: "nested",
-                                                title: "I have coppied my Discord bot's token",
-                                                payload: "STEP 6",
-                                                call_to_actions:
-                                                {
-                                                    type: "nested",
-                                                    title: "I have added APP_NAME and DISCORD_TOKEN",
-                                                    payload: "STEP 7",
-                                                    call_to_actions:
-                                                    {
-                                                        type: "postback",
-                                                        title: "Extra configuration",
-                                                        payload: "STEP 8"
-                                                    }
-                                                }
-                                            }
-                                        }]
-                                    }]
-                                }]
-                            }]
-                        },
-                        {
-                            type: "postback",
-                            title: "Messenger",
-                            payload: "STEP 1"
-                        }
-                    ]
+                    payload: "STEP 0"
                 },
                 {
                     type: "postback",
