@@ -9,7 +9,7 @@ import sendData from '../sendData/send';
  */
 export default function POST(app: express.Express)
 {
-    app.post("/webhook", (req: Request, res: Response) =>
+    app.post("/", (req: Request, res: Response) =>
     {
         const body = req.body;
 
