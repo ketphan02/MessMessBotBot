@@ -1,7 +1,6 @@
 import { StageThreeMenu } from "../persistent_menu";
 import { title_arr } from "../requests/POST";
 import sendData from "../sendData/send";
-import stageZero from "./zero";
 
 const stageTwo = async (sender_id: String, title: String) =>
 {
@@ -19,7 +18,7 @@ const stageTwo = async (sender_id: String, title: String) =>
     {
         const req = arr[-1];
         arr.pop()
-        await stageZero(sender_id, req);
+        await stageOne(sender_id, req);
     }
 
     title_arr[index].arr = arr;

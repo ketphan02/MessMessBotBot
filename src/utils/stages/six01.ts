@@ -24,7 +24,7 @@ const stageSix01 = async (sender_id: String, title: String) =>
     {
         const req = arr[-1];
         arr.pop()
-        await stageFive(sender_id, req);
+        await stageSix01(sender_id, req);
     }
 
     title_arr[index].arr = arr;
