@@ -9,7 +9,7 @@ const stageTwo = (sender_id: String, title: String) =>
     let arr = title_arr[index].arr;
 
     arr.push(title);
-    if (title === "I have pressed Deploy to Heroku")
+    if (title === "Pressed the button")
     {
         StageThreeMenu(sender_id);
 
