@@ -17,7 +17,7 @@ interface usr_info
     arr: String[]
 }
 
-export let title_arr: usr_info[];
+export let title_arr: usr_info[] = [];
 
 /**
  * @description POST Method.
