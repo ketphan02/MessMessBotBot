@@ -58,5 +58,7 @@ export default function POST(app: express.Express)
                 });
             });
         }
+
+        res.send(200);
     });
 }

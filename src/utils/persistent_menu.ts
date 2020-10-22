@@ -74,14 +74,12 @@ const StartingMenu = (res: express.Response, sender_id: String) =>
         if (!error && respond.statusCode == 200)
         {
             console.log("Successfully built the starting menu.");
-            res.send(body);
         }
         else
         {
             console.log(respond.statusCode);
             console.log("StartingMenu: " + error);
         }
-        return;
     });
 }
 
