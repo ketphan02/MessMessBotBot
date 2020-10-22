@@ -25,11 +25,13 @@ export default function GET(app: express.Express)
                 StartingMenu(res);
 
                 console.log('VERIFIED');
-                return res.status(200).send(challenge);
+                res.status(200).send(challenge);
+                return;
             }
             else
             {
-                return res.sendStatus(403);
+                res.sendStatus(403);
+                return;
             }
         }
     });
