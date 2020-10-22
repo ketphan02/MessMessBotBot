@@ -23,14 +23,14 @@ const GetStartedButton = (res: express.Response) =>
     },
     (error, respond, body) =>
     {
-        if (!error && respond.statusCode == 200)
+        if (!error && respond.statusCode === 200)
         {
             console.log("Finished initializing Get Started button.");
             res.send(body);
         }
         else
         {
-            console.log(error);
+            console.log("GetStartedButton: " + error);
             return;
         }
     });
@@ -77,14 +77,14 @@ const StartingMenu = (res: express.Response) =>
     },
     (error, respond, body) =>
     {
-        if (!error && respond.statusCode == 200)
+        if (!error && respond.statusCode === 200)
         {
             console.log("Successfully built the starting menu.");
             res.send(body);
         }
         else
         {
-            console.log(error);
+            console.log("StartingMenu: " + error);
             return;
         }
     });

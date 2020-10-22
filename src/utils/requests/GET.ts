@@ -21,16 +21,15 @@ export default function GET(app: express.Express)
         {
             if (mode === 'subscribe' && token === VERIFY_TOKEN)
             {
-                console.log('VERIFIED');
-                res.status(200).send(challenge);
-
                 GetStartedButton(res);
                 StartingMenu(res);
+
+                console.log('VERIFIED');
+                return res.status(200).send(challenge);
             }
             else
             {
-                res.sendStatus(403);
-                return;
+                return res.sendStatus(403);
             }
         }
     });
