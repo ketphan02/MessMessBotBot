@@ -10,7 +10,7 @@ const stageSeven = async (sender_id: String, title: String) =>
     arr.push(title);
     if (title === "Permission granted")
     {
-        const msg: String = "Congratulation ! Your bot is ready to go.\n" +
+        const msg: String = "Congratulation! Your bot is ready to go.\n" +
         "If you want to do this again, delete this chat and start over.\n" +
         "Thank you for using me, I appreciate that.";
 

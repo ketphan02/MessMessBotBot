@@ -13,8 +13,8 @@ const stageThree = async (sender_id: String, title: String) =>
     {
         StageFourMenu(sender_id);
 
-        const msg: String = "Great !\n" +
-        "Let's go to the Settings tab. Under it, you will see a button called Reveal Config Vars in section Config Vars. Press it !";
+        const msg: String = "Great!\n" +
+        "Let's go to the Settings tab. Under it, you will see a button called Reveal Config Vars in section Config Vars. Press it!";
 
         await sendData(sender_id, msg);
     }

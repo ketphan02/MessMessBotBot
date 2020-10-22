@@ -13,9 +13,9 @@ const stageFour = async (sender_id: String, title: String) =>
     {
         StageFiveMenu(sender_id);
 
-        const msg: String = "Perfect ! Now, please go to this link (https://discord.com/developers/applications), create new application, and fill your bot's display name\n" +
+        const msg: String = "Perfect! Now, please go to this link (https://discord.com/developers/applications), create new application, and fill your bot's display name.\n" +
         "After that, go to the Bot tab and add new bot.\n" +
-        `You will see a Copy button. Press it and you're cool.`;
+        `You will see a Copy button. Press it and continue.`;
 
         await sendData(sender_id, msg);
     }

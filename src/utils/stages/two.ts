@@ -13,7 +13,7 @@ const stageTwo = async (sender_id: String, title: String) =>
     {
         StageThreeMenu(sender_id);
 
-        await sendData(sender_id, "Now, you will see a tab popped up. There will be a space for you to fill your bot's back-end name, go ahead and do it !");
+        await sendData(sender_id, "Now, you will see a tab popped up. There will be a space for you to fill your bot's back-end name, go ahead and do it!");
     }
     else if (title == "Go back")
     {

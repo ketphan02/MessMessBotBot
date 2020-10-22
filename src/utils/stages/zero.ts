@@ -10,13 +10,13 @@ const stageZero = async (sender_id: String, title: String) =>
     arr.push(title);
     if (title === "About us")
     {
-        await sendData(sender_id, "[INTRO]");
+        await sendData(sender_id, "Create by Phan Kiet");
     }
     else if (title === "Build your first bot")
     {
         StageOneMenu(sender_id);
 
-        await sendData(sender_id, "What kind of bot you want to build ?");
+        await sendData(sender_id, "What kind of bot you want to build?");
     }
 
     title_arr[index].arr = arr;

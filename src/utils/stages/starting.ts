@@ -7,7 +7,7 @@ const startingStage = async (sender_id: String) =>
 {
     StartingMenu(sender_id);
 
-    const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
+    const WELCOME_MESSAGE: String = "Welcome to Mess MessBot Bot. We're here to make your bot creating experience better!";
     await sendData(sender_id, WELCOME_MESSAGE);
 
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
