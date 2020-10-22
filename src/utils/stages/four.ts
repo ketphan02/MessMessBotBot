@@ -13,9 +13,11 @@ const stageFour = async (sender_id: String, title: String) =>
     {
         StageFiveMenu(sender_id);
 
-        await sendData(sender_id, "Perfect ! Now, please go to this link (https://discord.com/developers/applications), create new application, and fill your bot's display name");
-        await sendData(sender_id, "After that, go to the Bot tab and add new bot.");
-        await sendData(sender_id, `You will see a Copy button. Press it and you're cool.`);
+        const msg: String = "Perfect ! Now, please go to this link (https://discord.com/developers/applications), create new application, and fill your bot's display name\n" +
+        "After that, go to the Bot tab and add new bot.\n" +
+        `You will see a Copy button. Press it and you're cool.`;
+
+        await sendData(sender_id, msg);
     }
     else if (title == "Go back")
     {

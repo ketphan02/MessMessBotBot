@@ -10,9 +10,11 @@ const stageSeven = async (sender_id: String, title: String) =>
     arr.push(title);
     if (title === "Permission granted")
     {
-        await sendData(sender_id, "Congratulation ! Your bot is ready to go.");
-        await sendData(sender_id, "If you want to do this again, delete this chat and start over.");
-        await sendData(sender_id, "Thank you for using me, I appreciate that.");
+        const msg: String = "Congratulation ! Your bot is ready to go.\n" +
+        "If you want to do this again, delete this chat and start over.\n" +
+        "Thank you for using me, I appreciate that.";
+
+        await sendData(sender_id, msg);
     }
     else if (title == "Go back")
     {

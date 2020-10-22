@@ -14,10 +14,12 @@ const stageSix = async (sender_id: String, title: String) =>
     {
         StageSevenMenu(sender_id);
 
-        await sendData(sender_id, "Great ! We're almost there.");
-        await sendData(sender_id, "Let's go back to the discord page we opened. Go to OAuth2 tab and scroll down.");
-        await sendData(sender_id, "Find bot and choose it (Idk what do other options mean), and copy the generated url");
-        await sendData(sender_id, "Paste it on a new url bar (but don't press enter yet). In the back of the url, you will see permission=0, replace number 0 with the number 3156032");
+        const msg: String = "Great ! We're almost there.\n"
+        + "Let's go back to the discord page we opened. Go to OAuth2 tab and scroll down.\n"
+        + "Find bot and choose it (Idk what do other options mean), and copy the generated url.\n"
+        + "Paste it on a new url bar (but don't press enter yet). In the back of the url, you will see permission=0, replace number 0 with the number 3156032";
+
+        await sendData(sender_id, msg);
     }
     else if (title === "Extra customization")
     {

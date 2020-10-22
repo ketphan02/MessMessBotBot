@@ -13,9 +13,11 @@ const stageOne = async (sender_id: String, title: String) =>
     {
         StageTwoMenu(sender_id);
 
-        await sendData(sender_id, "Welcome to Discord Bot Guild. I will guild step-by-step to create your Discord Bot.");
-        await sendData(sender_id, "First, follow this link (https://j2c.cc/customizediscordbot), scroll down and hit the purple button");
-        await sendData(sender_id, "The password for the link is DiscordBot");
+        const msg: String = "Welcome to Discord Bot Guild. I will guild step-by-step to create your Discord Bot.\n" +
+        "First, follow this link (https://j2c.cc/customizediscordbot), scroll down and hit the purple button\n" +
+        "The password for the link is DiscordBot";
+
+        await sendData(sender_id, msg);
     }
     else if (title === "Messenger Bot")
     {
