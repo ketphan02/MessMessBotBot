@@ -59,6 +59,6 @@ export default function POST(app: express.Express)
             });
         }
 
-        res.send(200);
+        res.sendStatus(200);
     });
 }
