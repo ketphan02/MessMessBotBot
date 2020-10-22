@@ -1,5 +1,6 @@
 import { title_arr } from "../requests/POST";
 import sendData from "../sendData/send";
+import stageFive from "./five";
 import stageSix from "./six";
 
 const stageSeven = async (sender_id: String, title: String) =>
@@ -20,7 +21,8 @@ const stageSeven = async (sender_id: String, title: String) =>
     {
         arr.pop();
         arr.pop();
-        await stageSix(sender_id, arr[-1]);
+        if (arr[-1] === "Extra customization") await stageSix(sender_id, arr[-1]);
+        else await stageFive(sender_id, arr[-1]);
     }
 
     title_arr[index].arr = arr;
