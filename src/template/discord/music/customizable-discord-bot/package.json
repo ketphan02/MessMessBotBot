@@ -37,10 +37,5 @@
   "engines": {
     "node": "12.x",
     "npm": "6.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ketphan02/customizable-discord-bot.git"
-  },
-  "homepage": "https://github.com/ketphan02/customizable-discord-bot"
+  }
 }
