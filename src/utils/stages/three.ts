@@ -19,8 +19,10 @@ const stageThree = async (sender_id: String, title: String) =>
         await sendData(sender_id, msg);
     }
     else if (title == "Go back")
-    {
-        await stageOne(sender_id, arr[-1]);
+    {        
+        const req = arr[-1];
+        arr.pop()
+        await stageOne(sender_id, req);
     }
 
     title_arr[index].arr = arr;
