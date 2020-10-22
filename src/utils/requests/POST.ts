@@ -11,7 +11,13 @@ import stageSix from '../stages/six';
 import stageSix01 from '../stages/six01';
 import stageSeven from '../stages/seven';
 
-export let title_arr = new Array;
+interface usr_info
+{
+    user_id: String,
+    arr: String[]
+}
+
+export let title_arr: usr_info[];
 
 /**
  * @description POST Method.
