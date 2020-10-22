@@ -59,7 +59,7 @@ export default function POST(app: express.Express)
                         {
                             if (data.title === "Discord Bot")
                             {
-                                StageTwoMenu(sender_id);
+                                StageThreeMenu(sender_id);
 
                                 sendData(sender_id, "Welcome to Discord Bot Guild. I will guild step-by-step to create your Discord Bot.");
                                 sendData(sender_id, "First, follow this link (https://j2c.cc/customizediscordbot), scroll down and hit the purple button");
