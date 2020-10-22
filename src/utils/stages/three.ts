@@ -9,7 +9,7 @@ const stageThree = (sender_id: String, title: String) =>
     let arr = title_arr[index].arr;
 
     arr.push(title);
-    if (title === "I have named my bot")
+    if (title === "Named it")
     {
         StageFourMenu(sender_id);
 
