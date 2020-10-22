@@ -1,5 +1,5 @@
 import request from 'request';
-import express, { Response } from 'express';
+import express from 'express';
 
 const GetStartedButton = (res: express.Response) =>
 {
@@ -23,7 +23,7 @@ const GetStartedButton = (res: express.Response) =>
     },
     (error, respond, body) =>
     {
-        if (!error && respond.statusCode === 200)
+        if (!error && respond.statusCode == 200)
         {
             console.log("Finished initializing Get Started button.");
             res.send(body);
@@ -78,16 +78,17 @@ const StartingMenu = (res: express.Response, sender_id: String) =>
     },
     (error, respond, body) =>
     {
-        if (!error && respond.statusCode === 200)
+        if (!error && respond.statusCode == 200)
         {
             console.log("Successfully built the starting menu.");
-            return res.send(body);
+            res.send(body);
         }
         else
         {
             console.log(respond.statusCode);
             console.log("StartingMenu: " + error);
         }
+        return;
     });
 }
 
