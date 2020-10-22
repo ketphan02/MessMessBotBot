@@ -25,14 +25,10 @@ export default function GET(app: express.Express)
                 res.status(200).send(challenge);
 
                 GetStartedButton(res);
+                StartingMenu(res);
             }
             else res.sendStatus(403);
         }
-    });
-
-    app.get("/setup", (req, res) =>
-    {
-        StartingMenu(res);
     });
 }
 
