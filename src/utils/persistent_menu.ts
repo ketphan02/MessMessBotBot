@@ -165,27 +165,27 @@ const StageTwoMenu = (sender_id: String) =>
     }
 
     request(
-    {
-        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
-        "method": "POST",
-        "headers":
         {
-            'Content-Type': 'application/json'
+            "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+            "method": "POST",
+            "headers":
+            {
+                'Content-Type': 'application/json'
+            },
+            "form": categories
         },
-        "form": categories
-    },
-    (error, respond, body) =>
-    {
-        if (!error && respond.statusCode == 200)
+        (error, respond, body) =>
         {
-            console.log("Successfully built the stage 2 menu.");
-        }
-        else
-        {
-            console.log(respond.statusCode);
-            console.log("Stage 2: " + error);
-        }
-    });
+            if (!error && respond.statusCode == 200)
+            {
+                console.log("Successfully built the stage 2 menu.");
+            }
+            else
+            {
+                console.log(respond.statusCode);
+                console.log("Stage 2: " + error);
+            }
+        });
 }
 
 /**
@@ -213,27 +213,27 @@ const StageThreeMenu = (sender_id: String) =>
     }
 
     request(
-    {
-        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
-        "method": "POST",
-        "headers":
         {
-            'Content-Type': 'application/json'
+            "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+            "method": "POST",
+            "headers":
+            {
+                'Content-Type': 'application/json'
+            },
+            "form": categories
         },
-        "form": categories
-    },
-    (error, respond, body) =>
-    {
-        if (!error && respond.statusCode == 200)
+        (error, respond, body) =>
         {
-            console.log("Successfully built the stage 3 menu.");
-        }
-        else
-        {
-            console.log(respond.statusCode);
-            console.log("Stage 3: " + error);
-        }
-    });
+            if (!error && respond.statusCode == 200)
+            {
+                console.log("Successfully built the stage 3 menu.");
+            }
+            else
+            {
+                console.log(respond.statusCode);
+                console.log("Stage 3: " + error);
+            }
+        });
 }
 
 export {
