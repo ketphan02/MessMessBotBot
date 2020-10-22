@@ -18,7 +18,7 @@ const startingStage = async (sender_id: String) =>
     }
     
     if (index === -1) title_arr.push(new_usr_data);
-    else title_arr[index].assign(new_usr_data);
+    else title_arr[index] = new_usr_data;
 }
 
 export default startingStage;
