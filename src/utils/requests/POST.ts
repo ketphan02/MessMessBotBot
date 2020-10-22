@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { StageOneMenu, StartingMenu } from '../persistent_menu';
+import { StageOneMenu, StageThreeMenu, StageTwoMenu, StartingMenu } from '../persistent_menu';
 
 import sendData from '../sendData/send';
 
@@ -58,12 +58,21 @@ export default function POST(app: express.Express)
                         {
                             if (data.title === "Discord Bot")
                             {
+                                StageTwoMenu(sender_id);
                                 sendData(sender_id, "[DISCORD BOT GUILD]");
                             }
                             else if (data.title === "Messenger Bot")
                             {
                                 sendData(sender_id, "Sorry, this function is currently in development.")
                             }
+                        }
+                        else if (data.payload === "STEP 2")
+                        {
+                            StageThreeMenu(sender_id);
+                            sendData(sender_id, "Welcome to Discord Bot Guild. I will guild step-by-step to create your Discord Bot.");
+                            sendData(sender_id, "First, follow this link (https://j2c.cc/customizediscordbot), scroll down and hit the purple button");
+                            sendData(sender_id, "The password for the link is DiscordBot");
+
                         }
                     }
                     else if (event.message) return;
