@@ -118,7 +118,7 @@ const StartingMenu = (res: express.Response) =>
 
     request(
     {
-        "url": `https://graph.facebook.com/v2.6/me/messenger_profile?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
         "method": "POST",
         "headers":
         {
