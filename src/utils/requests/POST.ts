@@ -32,13 +32,13 @@ export default function POST(app: express.Express)
                 {
                     const sender_id: String = event.sender.id;
 
-                    console.log(sender_id);
-
                     if (event.postback)
                     {
                         const data: { title: String, payload: String } = event.postback;
                         if (data.payload === "GET_STARTED_PAYLOAD")
                         {                            
+                            StartingMenu(sender_id);
+
                             const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
                             sendData(sender_id, WELCOME_MESSAGE);
                         }
@@ -60,7 +60,7 @@ export default function POST(app: express.Express)
                             if (data.title === "Discord Bot")
                             {
                                 StageTwoMenu(sender_id);
-                                
+
                                 sendData(sender_id, "Welcome to Discord Bot Guild. I will guild step-by-step to create your Discord Bot.");
                                 sendData(sender_id, "First, follow this link (https://j2c.cc/customizediscordbot), scroll down and hit the purple button");
                                 sendData(sender_id, "The password for the link is DiscordBot");
