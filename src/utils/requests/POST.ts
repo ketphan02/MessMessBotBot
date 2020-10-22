@@ -3,9 +3,6 @@ import { StartingMenu } from '../persistent_menu';
 
 import sendData from '../sendData/send';
 
-
-let ok = false;
-
 /**
  * @description POST Method.
  * @param app From the webhook function.
@@ -55,26 +52,7 @@ export default function POST(app: express.Express)
                             {
                                 sendData(sender_id, "This function is still in development");
                             }
-                            else if (data.title === "Repeat")
-                            {
-                                ok = true;
-                                sendData(sender_id, "Now, type anything, type !!! to stop");
-                            }
                         }
-                    }
-                    else if (event.message)
-                    {
-                        const data: { text: String } = event.message;
-                        if (ok)
-                        {
-                            if (data.text === "!!!")
-                            {
-                                sendData(sender_id, "ok, i'll stop repeating you");
-                                ok = false;
-                            }
-                            else sendData(sender_id, "[USER'S MESSAGE]\n" + data.text);
-                        }
-                        else sendData(sender_id, "Please use the menu");
                     }
                 });
             });
