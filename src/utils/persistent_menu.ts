@@ -162,7 +162,7 @@ const StageTwoMenu = (sender_id: String) =>
             [
                 {
                     type: "postback",
-                    title: "I have pressed Deploy to Heroku Button",
+                    title: "I have pressed the button",
                     payload: "STEP 2"
                 },
                 {
