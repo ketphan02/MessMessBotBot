@@ -1,7 +1,7 @@
 import request from 'request';
 import express from 'express';
 
-const GetStartedButton = (res: express.Response) =>
+const GetStartedButton = () =>
 {
     const messageData: Object = 
     {
@@ -34,7 +34,11 @@ const GetStartedButton = (res: express.Response) =>
     });
 }
 
-const StartingMenu = (res: express.Response, sender_id: String) =>
+/**
+ * @description Contain 2 sections: Build bot and About us
+ * @param {sender_id} String The id of the sender
+ */
+const StartingMenu = (sender_id: String) =>
 {
     const categories: Object =
     {
@@ -83,5 +87,57 @@ const StartingMenu = (res: express.Response, sender_id: String) =>
     });
 }
 
+/**
+ * @description Answer for question: "What kind of bot you want to build ?"" The answers are Discord and Messenger
+ * @param {sender_id} String The id of the sender
+ */
+const StageOneMenu = (sender_id: String) =>
+{
+    const categories: Object =
+    {
+        psid: sender_id,
+        persistent_menu:
+        [{
+            locale: "default",
+            composer_input_disabled: true,
+            call_to_actions:
+            [
+                {
+                    type: "postback",
+                    title: "Discord Bot",
+                    payload: "STEP 1"
+                },
+                {
+                    type: "postback",
+                    title: "Messenger Bot",
+                    payload: "STEP 1"
+                }
+            ]
+        }]
+    }
 
-export { GetStartedButton, StartingMenu };
+    request(
+    {
+        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+        "method": "POST",
+        "headers":
+        {
+            'Content-Type': 'application/json'
+        },
+        "form": categories
+    },
+    (error, respond, body) =>
+    {
+        if (!error && respond.statusCode == 200)
+        {
+            console.log("Successfully built the stage 1 menu.");
+        }
+        else
+        {
+            console.log(respond.statusCode);
+            console.log("StartingMenu: " + error);
+        }
+    });
+}
+
+export { GetStartedButton, StartingMenu, StageOneMenu };

@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { StartingMenu } from '../persistent_menu';
+import { StageOneMenu, StartingMenu } from '../persistent_menu';
 
 import sendData from '../sendData/send';
 
@@ -37,7 +37,7 @@ export default function POST(app: express.Express)
                         const data: { title: String, payload: String } = event.postback;
                         if (data.payload === "GET_STARTED_PAYLOAD")
                         {                            
-                            StartingMenu(res, sender_id);
+                            StartingMenu(sender_id);
                             
                             const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
                             sendData(sender_id, WELCOME_MESSAGE);
@@ -50,7 +50,19 @@ export default function POST(app: express.Express)
                             }
                             else if (data.title === "Build your first bot")
                             {
-                                sendData(sender_id, "This function is still in development");
+                                StageOneMenu(sender_id);
+                                sendData(sender_id, "What kind of bot you want to build ?");
+                            }
+                        }
+                        else if (data.payload === "STEP 1")
+                        {
+                            if (data.title === "Discord Bot")
+                            {
+                                sendData(sender_id, "[DISCORD BOT GUILD]");
+                            }
+                            else if (data.title === "Messenger Bot")
+                            {
+                                sendData(sender_id, "Sorry, this function is currently in development.")
                             }
                         }
                     }

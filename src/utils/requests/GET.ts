@@ -21,7 +21,7 @@ export default function GET(app: express.Express)
         {
             if (mode === 'subscribe' && token === VERIFY_TOKEN)
             {
-                GetStartedButton(res);
+                GetStartedButton();
 
                 console.log('VERIFIED');
                 res.status(200).send(challenge);
