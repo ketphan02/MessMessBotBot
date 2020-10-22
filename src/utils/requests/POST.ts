@@ -1,7 +1,17 @@
 import express, { Request, Response } from 'express';
-import { StageOneMenu, StageThreeMenu, StageTwoMenu, StartingMenu } from '../persistent_menu';
 
-import sendData from '../sendData/send';
+import startingStage from '../stages/starting';
+import stageZero from '../stages/zero';
+import stageOne from '../stages/one';
+import stageTwo from '../stages/two';
+import stageThree from '../stages/three';
+import stageFour from '../stages/four';
+import stageFive from '../stages/five';
+import stageSix from '../stages/six';
+import stageSix01 from '../stages/six01';
+import stageSeven from '../stages/seven';
+
+export let title_arr = new Array;
 
 /**
  * @description POST Method.
@@ -37,53 +47,43 @@ export default function POST(app: express.Express)
                         const data: { title: String, payload: String } = event.postback;
                         if (data.payload === "GET_STARTED_PAYLOAD")
                         {                            
-                            StartingMenu(sender_id);
-
-                            const WELCOME_MESSAGE: String = "[WELCOME MESSAGE]";
-                            sendData(sender_id, WELCOME_MESSAGE);
+                            startingStage(sender_id);
                         }
                         else if (data.payload === "STEP 0")
                         {
-                            if (data.title === "About us")
-                            {
-                                sendData(sender_id, "[INTRO]");
-                            }
-                            else if (data.title === "Build your first bot")
-                            {
-                                StageOneMenu(sender_id);
-
-                                sendData(sender_id, "What kind of bot you want to build ?");
-                            }
+                            stageZero(sender_id, data.title);
                         }
                         else if (data.payload === "STEP 1")
                         {
-                            if (data.title === "Discord Bot")
-                            {
-                                StageTwoMenu(sender_id);
-
-                                sendData(sender_id, "Welcome to Discord Bot Guild. I will guild step-by-step to create your Discord Bot.");
-                                sendData(sender_id, "First, follow this link (https://j2c.cc/customizediscordbot), scroll down and hit the purple button");
-                                sendData(sender_id, "The password for the link is DiscordBot");
-                            }
-                            else if (data.title === "Messenger Bot")
-                            {
-                                sendData(sender_id, "Sorry, this function is currently in development.")
-                            }
-                            else if (data.title == "Go back")
-                            {
-                                StartingMenu(sender_id);
-                            }
+                            stageOne(sender_id, data.title);
                         }
                         else if (data.payload === "STEP 2")
                         {
-                            if (data.title === "I have pressed Deploy to Heroku")
-                            {
-                                StageThreeMenu(sender_id);
-                            }
-                            else if (data.title == "Go back")
-                            {
-                                StageOneMenu(sender_id);
-                            }
+                            stageTwo(sender_id, data.title);
+                        }
+                        else if (data.payload === "STEP 3")
+                        {
+                            stageThree(sender_id, data.title);
+                        }
+                        else if (data.payload === "STEP 4")
+                        {
+                            stageFour(sender_id, data.title);
+                        }
+                        else if (data.payload === "STEP 5")
+                        {
+                            stageFive(sender_id, data.title);
+                        }
+                        else if (data.payload === "STEP 6")
+                        {
+                            stageSix(sender_id, data.title);
+                        }
+                        else if (data.payload === "STEP 6.1")
+                        {
+                            stageSix01(sender_id, data.title);
+                        }
+                        else if (data.payload === "STEP 7")
+                        {
+                            stageSeven(sender_id, data.title);
                         }
                     }
                     else if (event.message) return;

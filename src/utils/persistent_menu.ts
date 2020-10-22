@@ -146,7 +146,7 @@ const StageOneMenu = (sender_id: String) =>
 }
 
 /**
- * @description Answer for question about heroku deployment. The answers are Discord and Messenger
+ * @description Answer for question about heroku deployment.
  * @param {sender_id} String The id of the sender
  */
 const StageTwoMenu = (sender_id: String) =>
@@ -199,7 +199,7 @@ const StageTwoMenu = (sender_id: String) =>
 }
 
 /**
- * @description Answer for question for stage 2. The answers are Discord and Messenger
+ * @description Answer for question for stage 2.
  * @param {sender_id} String The id of the sender
  */
 const StageThreeMenu = (sender_id: String) =>
@@ -217,7 +217,13 @@ const StageThreeMenu = (sender_id: String) =>
                     type: "postback",
                     title: "I have named my bot",
                     payload: "STEP 3"
+                },
+                {
+                    type: "postback",
+                    title: "Go back",
+                    payload: "STEP 3"
                 }
+
             ]
         }]
     }
@@ -246,10 +252,290 @@ const StageThreeMenu = (sender_id: String) =>
     });
 }
 
+/**
+ * @description Answer for question: "Have you pressed reveal config vars".
+ * @param {sender_id} String The id of the sender
+ */
+const StageFourMenu = (sender_id: String) =>
+{
+    const categories: Object =
+    {
+        psid: sender_id,
+        persistent_menu:
+        [{
+            locale: "default",
+            composer_input_disabled: true,
+            call_to_actions:
+            [
+                {
+                    type: "postback",
+                    title: "Revealed the variables",
+                    payload: "STEP 4"
+                },
+                {
+                    type: "postback",
+                    title: "Go back",
+                    payload: "STEP 4"
+                }
+
+            ]
+        }]
+    }
+
+    request(
+    {
+        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+        "method": "POST",
+        "headers":
+        {
+            'Content-Type': 'application/json'
+        },
+        "form": categories
+    },
+    (error, respond, body) =>
+    {
+        if (!error && respond.statusCode == 200)
+        {
+            console.log("Successfully built the stage 4 menu.");
+        }
+        else
+        {
+            console.log(respond.statusCode);
+            console.log("Stage 4: " + error);
+        }
+    });
+}
+
+/**
+ * @description Answer if people have their Discord Token.
+ * @param {sender_id} String The id of the sender
+ */
+const StageFiveMenu = (sender_id: String) =>
+{
+    const categories: Object =
+    {
+        psid: sender_id,
+        persistent_menu:
+        [{
+            locale: "default",
+            composer_input_disabled: true,
+            call_to_actions:
+            [
+                {
+                    type: "postback",
+                    title: "Got the token",
+                    payload: "STEP 5"
+                },
+                {
+                    type: "postback",
+                    title: "Go back",
+                    payload: "STEP 5"
+                }
+
+            ]
+        }]
+    }
+
+    request(
+    {
+        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+        "method": "POST",
+        "headers":
+        {
+            'Content-Type': 'application/json'
+        },
+        "form": categories
+    },
+    (error, respond, body) =>
+    {
+        if (!error && respond.statusCode == 200)
+        {
+            console.log("Successfully built the stage 5 menu.");
+        }
+        else
+        {
+            console.log(respond.statusCode);
+            console.log("Stage 5: " + error);
+        }
+    });
+}
+
+/**
+ * @description Answer for question are you done filling in the variables.
+ * @param {sender_id} String The id of the sender
+ */
+const StageSixMenu = (sender_id: String) =>
+{
+    const categories: Object =
+    {
+        psid: sender_id,
+        persistent_menu:
+        [{
+            locale: "default",
+            composer_input_disabled: true,
+            call_to_actions:
+            [
+                {
+                    type: "postback",
+                    title: "I have filled them",
+                    payload: "STEP 6"
+                },
+                {
+                    type: "postback",
+                    title: "Extra customization",
+                    payload: "STEP 6"
+                },
+                {
+                    type: "postback",
+                    title: "Go back",
+                    payload: "STEP 6"
+                }
+
+            ]
+        }]
+    }
+
+    request(
+    {
+        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+        "method": "POST",
+        "headers":
+        {
+            'Content-Type': 'application/json'
+        },
+        "form": categories
+    },
+    (error, respond, body) =>
+    {
+        if (!error && respond.statusCode == 200)
+        {
+            console.log("Successfully built the stage 6 menu.");
+        }
+        else
+        {
+            console.log(respond.statusCode);
+            console.log("Stage 6: " + error);
+        }
+    });
+}
+
+/**
+ * @description Extra variables customization.
+ * @param {sender_id} String The id of the sender
+ */
+const StageSix01Menu = (sender_id: String) =>
+{
+    const categories: Object =
+    {
+        psid: sender_id,
+        persistent_menu:
+        [{
+            locale: "default",
+            composer_input_disabled: true,
+            call_to_actions:
+            [
+                {
+                    type: "postback",
+                    title: "I have filled them",
+                    payload: "STEP 6.1"
+                },
+                {
+                    type: "postback",
+                    title: "Go back",
+                    payload: "STEP 6.1"
+                }
+
+            ]
+        }]
+    }
+
+    request(
+    {
+        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+        "method": "POST",
+        "headers":
+        {
+            'Content-Type': 'application/json'
+        },
+        "form": categories
+    },
+    (error, respond, body) =>
+    {
+        if (!error && respond.statusCode == 200)
+        {
+            console.log("Successfully built the stage 6.1 menu.");
+        }
+        else
+        {
+            console.log(respond.statusCode);
+            console.log("Stage 6.1: " + error);
+        }
+    });
+}
+
+/**
+ * @description "Answer for question does your bot have enough permission ?".
+ * @param {sender_id} String The id of the sender
+ */
+const StageSevenMenu = (sender_id: String) =>
+{
+    const categories: Object =
+    {
+        psid: sender_id,
+        persistent_menu:
+        [{
+            locale: "default",
+            composer_input_disabled: true,
+            call_to_actions:
+            [
+                {
+                    type: "postback",
+                    title: "Permission granted",
+                    payload: "STEP 7"
+                },
+                {
+                    type: "postback",
+                    title: "Go back",
+                    payload: "STEP 7"
+                }
+
+            ]
+        }]
+    }
+
+    request(
+    {
+        "url": `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/custom_user_settings?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+        "method": "POST",
+        "headers":
+        {
+            'Content-Type': 'application/json'
+        },
+        "form": categories
+    },
+    (error, respond, body) =>
+    {
+        if (!error && respond.statusCode == 200)
+        {
+            console.log("Successfully built the stage 7 menu.");
+        }
+        else
+        {
+            console.log(respond.statusCode);
+            console.log("Stage 7: " + error);
+        }
+    });
+}
+
 export {
     GetStartedButton,
     StartingMenu,
     StageOneMenu,
     StageTwoMenu,
     StageThreeMenu,
+    StageFourMenu,
+    StageFiveMenu,
+    StageSixMenu,
+    StageSix01Menu,
+    StageSevenMenu
 };

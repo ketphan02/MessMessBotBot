@@ -34,15 +34,15 @@ const __main__ = () =>
     app.on('message', async (message) =>
     {
         if (message.author.bot) return;
-        if (! message.content.startsWith(process.env.PREFIX)) return;
+        if (! message.content.startsWith(process.env.PREFIX || "!")) return;
 
         const data = message.content.trim().substring(1).toLowerCase();
 
-        if (data.startsWith(process.env.COMMAND_PLAY))
+        if (data.startsWith(process.env.COMMAND_PLAY || "play"))
         {
             channel = message.member.voice.channel;
 
-            await message.react(process.env.OK_SYMBOL);
+            await message.react(process.env.OK_SYMBOL || "👌");
 
             // Check if user in voice channel or bot have enough permission to play music
             if (!channel)
@@ -63,11 +63,11 @@ const __main__ = () =>
 
             connection = await channel.join();
 
-            const query = data.substring((process.env.PREFIX + process.env.COMMAND_PLAY).length + 1);
+            const query = data.substring(((process.env.PREFIX || "!") + (process.env.COMMAND_PLAY || "play")).length + 1);
 
             if (!isEmpty(query))
             {
-                vids = await scrapeYt.search(query, {type: "video", limit: parseInt(process.env.NUMBER_OF_YOUTUBE_VIDS)});
+                vids = await scrapeYt.search(query, {type: "video", limit: parseInt(process.env.NUMBER_OF_YOUTUBE_VIDS || "4")});
 
                 if (isEmpty(vids))
                 {
@@ -87,68 +87,76 @@ const __main__ = () =>
             }
             else
             {
-                await message.channel.send(`Use ${process.env.PREFIX + process.env.COMMAND_PLAY} + <song name> to play a song`);
+                await message.channel.send(`Use ${(process.env.PREFIX || "!") + (process.env.COMMAND_PLAY || "play")} + <song name> to play a song`);
             }
         }
         else if (song_choose)
         {
-            song_choose = false;
-            if ("1" <= data && data <= process.env.NUMBER_OF_YOUTUBE_VIDS)
+            try
             {
-                await message.react(process.env.OK_SYMBOL);
-
-                playlist.push(await scrapeYt.getVideo(vids[parseInt(data) - 1].id));
-
-                const url = `https://youtube.com/watch?v=${playlist[0].id}`;
-                connection.play(
-                await ytdl(url),
+                song_choose = false;
+                if ("1" <= data && data <= process.env.NUMBER_OF_YOUTUBE_VIDS || "4")
                 {
-                    type: 'opus'
-                })
-                .on("finish", async () =>
-                {
-                    await message.channel.send("Nothing else to play, imma head out");
-                    playlist.shift();
-                    channel.leave();
-                })
-                .on("error", async (err : Error) =>
-                {
-                    await message.channel.send("Something bad happened, please try again.");
-                    console.log(err);
-                });
+                    await message.react(process.env.OK_SYMBOL || "👌");
 
-                await message.channel.send(`Now playing ${vids[parseInt(data) - 1].title}...`);
+                    playlist.push(await scrapeYt.getVideo(vids[parseInt(data) - 1].id));
+
+                    const url = `https://youtube.com/watch?v=${playlist[0].id}`;
+                    connection.play(
+                    await ytdl(url),
+                    {
+                        type: 'opus'
+                    })
+                    .on("finish", async () =>
+                    {
+                        await message.channel.send("Nothing else to play, imma head out");
+                        playlist.shift();
+                        channel.leave();
+                    })
+                    .on("error", async (err : Error) =>
+                    {
+                        await message.channel.send("Something bad happened, please try again.");
+                        console.log(err);
+                    });
+
+                    await message.channel.send(`Now playing ${vids[parseInt(data) - 1].title}...`);
+                }
+                else
+                {
+                    await message.react(process.env.THINK_SYMBOL || "🤔");
+                    await message.channel.send(`Bro ???`);
+                }
             }
-            else
+            catch
             {
-                await message.react(process.env.THINK_SYMBOL);
-                await message.channel.send(`Bro ???`);
+                await message.channel.send("This song is not available");
+                channel.leave();
             }
         }
         else
         {
-            if (data.startsWith(process.env.COMMAND_STOP))
+            if (data.startsWith(process.env.COMMAND_STOP || "stop"))
             {
-                await message.react(process.env.SAD_SYMBOL);
+                await message.react(process.env.SAD_SYMBOL || "😢");
                 connection.dispatcher.end();
                 channel.leave();
             }
-            else if (data.startsWith(process.env.COMMAND_PAUSE))
+            else if (data.startsWith(process.env.COMMAND_PAUSE || "pause"))
             {
-                await message.react(process.env.OK_SYMBOL);
+                await message.react(process.env.OK_SYMBOL || "👌");
                 connection.dispatcher.pause(true);
                 song_pause = true;
             }
-            else if (data.startsWith(process.env.COMMAND_RESUME))
+            else if (data.startsWith(process.env.COMMAND_RESUME || "resume"))
             {
                 if (song_pause)
                 {
-                    await message.react(process.env.OK_SYMBOL);
+                    await message.react(process.env.OK_SYMBOL = "👌");
                     connection.dispatcher.resume();
                 }
                 else
                 {
-                    await message.react(process.env.THINK_SYMBOL);
+                    await message.react(process.env.THINK_SYMBOL || "🤔");
                     await message.channel.send(`Bro ???`);
                 }
             }
@@ -161,13 +169,13 @@ const __main__ = () =>
     });
 }
 
-const keepAlive = () =>
+const keepAlive = (data: string) =>
 {
     setInterval(async () =>
     {
         const url = `https://${process.env.APP_NAME}.herokuapp.com`
         await fetch(url);
-        console.log("Fetching...");
+        console.log(data);
     }, 5 * 60 * 1000);
 }
 
@@ -190,7 +198,14 @@ const __hosting__ = () =>
 const port = process.env.PORT || undefined;
 
 if (port) __hosting__();
-__main__();
-keepAlive();
+if (process.env.DISCORD_TOKEN)
+{
+    __main__();
+    keepAlive("Fetching...");
+}
+else
+{
+    keepAlive("No Discord Token found");
+}
 
 
