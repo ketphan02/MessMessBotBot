@@ -29,6 +29,8 @@ const GetStartedButton = (res: express.Response) =>
             res.send(body);
         }
         else console.log(error);
+
+        return;
     });
 }
 
@@ -79,6 +81,8 @@ const StartingMenu = (res: express.Response) =>
             res.send(body);
         }
         else console.log(error);
+
+        return;
     });
 }
 
