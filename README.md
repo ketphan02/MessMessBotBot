@@ -5,7 +5,7 @@
 MESSmessbotBOT is a chatbot which helps people create other kinds of chat bot easier.
 
 [![BuildStatus](https://img.shields.io/travis/motdotla/dotenv/master.svg?style=flat-square)](https://dashboard.heroku.com/apps/mess-messbot-bot)
-<img src="https://img.shields.io/badge/license-ISC-yellowgreen"/>
+<img src="https://img.shields.io/badge/license-MIT-yellowgreen"/>
 <img src="https://img.shields.io/badge/author-PhanKiet-orange"/>
 <img src="https://img.shields.io/badge/language-TypeScript-informational"/>
 
