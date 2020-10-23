@@ -4,19 +4,18 @@ export default async function sendImage(sender_id: String, imglink: String)
 {
     const data =
     {
-        recipient:
+        "recipient":
         {
-            id: sender_id
+            "id": sender_id
         },
-        message:
+        "message":
         {
-            attachment:
-            {
-                type: "image",
-                payload:
+            "attachment":{
+                "type":"image", 
+                "payload":
                 {
-                    url: imglink,
-                    is_reusable: true
+                    "is_reusable": true,
+                    "url":"https://raw.githubusercontent.com/ketphan02/MessMessBotBot/master/src/utils/images/Customize.png"
                 }
             }
         }
