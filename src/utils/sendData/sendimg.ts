@@ -15,8 +15,8 @@ export default async function sendImage(sender_id: String, imglink: String)
                 type: "image",
                 payload:
                 {
-                    is_reuseable: true,
-                    url: imglink
+                    url: imglink,
+                    is_reusable: true
                 }
             }
         }
@@ -30,6 +30,10 @@ export default async function sendImage(sender_id: String, imglink: String)
             "access_token": process.env.PAGE_ACCESS_TOKEN
         },
         "method": "POST",
+        "headers": 
+        {
+            "Content-Type": "application/json"
+        },
         "json": data
     }, (error, response, body) =>
     {
