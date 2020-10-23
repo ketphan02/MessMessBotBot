@@ -19,6 +19,7 @@ const stageTwo = async (sender_id: String, title: String) =>
     {
         arr.pop()
         const req = arr[arr.length];
+        console.log(req);
         await stageZero(sender_id, req);
     }
 
