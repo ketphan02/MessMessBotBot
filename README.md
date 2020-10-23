@@ -1,6 +1,6 @@
 # MESSmessbotBOT
 
-<img src="https://raw.githubusercontent.com/ketphan02/MessMessBotBot/master/src/utils/images/something.png" alt="logo" align="right" width=30%/>
+<img src="https://raw.githubusercontent.com/ketphan02/MessMessBotBot/master/src/utils/images/logo.png" alt="logo" align="right" width=25%/>
 
 MESSmessbotBOT is a chatbot which helps people create other kinds of chat bot easier.
 
