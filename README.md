@@ -20,3 +20,43 @@ MESSmessbotBOT is a chatbot which helps people create other kinds of chat bot ea
 ```
 Caution: All the variables must be filled in to run the bot
 ```
+
+## Setup the bot:
+1. Press the Deploy to Heroku Button above and name your backend.
+2. Create your application at [Facebook Developer Site](https://developers.facebook.com) and fill in the App Display Name.
+3. In the Dashboard, scroll down to see a list of products you can make and press Set Up in the **Messenger** box. You will be redirected to the Messenger Bot Settings.
+4. Scroll down to **Access Tokens**, add your Facebook Page. Then, click on **Generate Token** and copy the token.
+5. Go back to the Heroku Tab, go to **Settings** ⟶ **Config Vars** ⟶ **Reveal Config Vars**.
+6. You will see 2 box in a row, in the KEY box, type "**PAGE_ACCESS_TOKEN**" and paste your previously copied token into the VALUE box.
+7. Type "**FB_GRAPH_API_VERSION**" into the KEY box and "**8.0**" in the VALUE box
+8. Type "**VERIFY_TOKEN**" into the KEY box and type whatever you want, then copy it.
+9. After that, go back to the Facebook Developer site, under the Access Token tab, there's **Webhooks** tab. Press **Add Callback URL**, paste your copied data into **Verify Token**.
+10. Don't close the window yet, go back to the Heroku tab and right click the **Open app** button on the top right corner, then choose **Copy link address**.
+11. Go back to the Facebook Developer site and paste the link to **Callback URL** box. Then, type "**/webhook**" right after the pasted URL.
+12. Press **Verify and Save** and you're ready to go.
+
+## Contact
+### PhanKiet
+<a href="https://github.com/ketphan02">
+	<img width="20" align="left"
+		 alt="My GitHub profile"
+		 src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg">
+</a>
+
+<a href="https://www.linkedin.com/in/ketphan02/">
+	<img width="20" align="left"
+		 alt="My LinkedIn profile"
+		 src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg">
+</a>
+
+<a href="mailto:tuankiet.phannguyen@gmail.com">
+	<img width="20" align="left"
+		 alt="My Gmail"
+		 src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg">
+</a>
+
+<a href="mailto:tuankietvn@outlook.com">
+	<img width="20" align="left"
+		 alt="My Outlook"
+		 src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/microsoftoutlook.svg">
+</a>
