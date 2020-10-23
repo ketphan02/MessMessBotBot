@@ -9,7 +9,7 @@ import { isEmpty } from 'lodash';
 import express from 'express';
 import bodyParser from 'body-parser';
 
-import scrapeYt, { Video } from 'scrape-yt';
+import scrapeYt, { Video, VideoDetailed } from 'scrape-yt';
 
 import fetch from 'node-fetch';
 
@@ -23,6 +23,8 @@ const __main__ = () =>
     let connection: Discord.VoiceConnection;
     let channel: Discord.VoiceChannel;
     let vids: Video[];
+    let isPeopleInVoice = false;
+    let music_channel = null;
 
     app.login(process.env.DISCORD_TOKEN);
     
@@ -37,6 +39,38 @@ const __main__ = () =>
         if (! message.content.startsWith(process.env.PREFIX || "!")) return;
 
         const data = message.content.trim().substring(1).toLowerCase();
+
+        const playSongs = async () =>
+        {
+            if (playlist.length == 0)
+            {
+                await message.channel.send("Nothing else to play, imma head out");
+                channel.leave();
+                return;
+            }
+            const url = `https://youtube.com/watch?v=${playlist[0].id}`;
+
+            await message.channel.send(`Now playing ${playlist[0].title}...`);
+
+            connection.play(
+            await ytdl(url),
+            {
+                type: 'opus'
+            })
+            .on("finish", async () =>
+            {
+                await playlist.shift();
+                await playSongs();
+            })
+            .on("error", async (err : Error) =>
+            {
+                await message.channel.send("Something bad happened, please try again.");
+                console.log(err);
+                await playlist.shift();
+                await playSongs();
+            });
+        }
+
 
         if (data.startsWith(process.env.COMMAND_PLAY || "play"))
         {
@@ -99,27 +133,11 @@ const __main__ = () =>
                 {
                     await message.react(process.env.OK_SYMBOL || "👌");
 
-                    playlist.push(await scrapeYt.getVideo(vids[parseInt(data) - 1].id));
+                    playlist.push( await scrapeYt.getVideo(vids[parseInt(data) - 1].id));
+                    await message.channel.send(`Pushing ${vids[parseInt(data) - 1].title} into the queue`);
+                    
+                    if (playlist.length === 1) await playSongs();
 
-                    const url = `https://youtube.com/watch?v=${playlist[0].id}`;
-                    connection.play(
-                    await ytdl(url),
-                    {
-                        type: 'opus'
-                    })
-                    .on("finish", async () =>
-                    {
-                        await message.channel.send("Nothing else to play, imma head out");
-                        playlist.shift();
-                        channel.leave();
-                    })
-                    .on("error", async (err : Error) =>
-                    {
-                        await message.channel.send("Something bad happened, please try again.");
-                        console.log(err);
-                    });
-
-                    await message.channel.send(`Now playing ${vids[parseInt(data) - 1].title}...`);
                 }
                 else
                 {
@@ -127,9 +145,9 @@ const __main__ = () =>
                     await message.channel.send(`Bro ???`);
                 }
             }
-            catch
+            catch (error)
             {
-                await message.channel.send("This song is not available");
+                await message.channel.send("This song is not available due to " + error);
                 channel.leave();
             }
         }
@@ -140,6 +158,12 @@ const __main__ = () =>
                 await message.react(process.env.SAD_SYMBOL || "😢");
                 connection.dispatcher.end();
                 channel.leave();
+            }
+            else if (data.startsWith(process.env.COMMAND_SKIP || "skip"))
+            {
+                await message.react(process.env.OK_SYMBOL || "👌");
+                await playlist.shift();
+                await playSongs();
             }
             else if (data.startsWith(process.env.COMMAND_PAUSE || "pause"))
             {
