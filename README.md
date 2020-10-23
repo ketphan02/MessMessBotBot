@@ -38,22 +38,22 @@ Caution: All the variables must be filled in to run the bot
 ## Contact
 ### PhanKiet
 <a href="https://github.com/ketphan02">
-    <img width="20" align="left"
+    <img width="15" align="left"
         alt="My GitHub profile"
         src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg">
 </a>
 <a href="https://www.linkedin.com/in/ketphan02/">
-    <img width="20" align="left"
+    <img width="15" align="left"
         alt="My LinkedIn profile"
         src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg">
 </a>
 <a href="mailto:tuankiet.phannguyen@gmail.com">
-    <img width="20" align="left"
+    <img width="15" align="left"
         alt="My Gmail"
         src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg">
 </a>
 <a href="mailto:tuankietvn@outlook.com">
-    <img width="20" align="left"
+    <img width="15" align="left"
         alt="My Outlook"
         src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/microsoftoutlook.svg">
 </a>
@@ -61,17 +61,37 @@ Caution: All the variables must be filled in to run the bot
 
 ### TheAnh Vu
 <a href="https://github.com/theanh28">
-    <img width="20" align="left"
+    <img width="15" align="left"
         alt="My GitHub profile"
         src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg">
 </a>
 <a href="https://www.linkedin.com/in/anh-alex-vu-5024111ab/">
-    <img width="20" align="left"
+    <img width="15" align="left"
         alt="My LinkedIn profile"
         src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg">
 </a>
 <a href="mailto:theanhvu02.101@gmail.com">
-    <img width="20" align="left"
+    <img width="15" align="left"
         alt="My Gmail"
         src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg">
 </a>
+<br/>
+
+## Reference
+- ketphan02. "Discord Music Bot Template". <br/>
+https://github.com/ketphan02/customizable-discord-bot
+
+- ketphan02. "UBC Chat". <br/>
+https://github.com/ketphan02/chatbot-ubc
+
+- Major-Thrust. "Discordjs-MusicBot". <br/>
+https://github.com/Major-Thrust/Discordjs-MusicBot
+
+- Jordan Irabor. "How to Set Up a Node Project With Typescript". *Digital Ocean*. <br/>
+https://www.digitalocean.com/community/tutorials/setting-up-a-node-project-with-typescript
+
+- FACEBOOK for Developers. "Messenger Platform". <br/>
+https://developers.facebook.com/docs/messenger-platform
+
+- Discord. "Discord.JS". <br/>
+https://discord.js.org
