@@ -38,25 +38,40 @@ Caution: All the variables must be filled in to run the bot
 ## Contact
 ### PhanKiet
 <a href="https://github.com/ketphan02">
-	<img width="20" align="left"
-		 alt="My GitHub profile"
-		 src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg">
+    <img width="20" align="left"
+        alt="My GitHub profile"
+        src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg">
 </a>
-
 <a href="https://www.linkedin.com/in/ketphan02/">
-	<img width="20" align="left"
-		 alt="My LinkedIn profile"
-		 src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg">
+    <img width="20" align="left"
+        alt="My LinkedIn profile"
+        src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg">
 </a>
-
 <a href="mailto:tuankiet.phannguyen@gmail.com">
-	<img width="20" align="left"
-		 alt="My Gmail"
-		 src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg">
+    <img width="20" align="left"
+        alt="My Gmail"
+        src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg">
 </a>
-
 <a href="mailto:tuankietvn@outlook.com">
-	<img width="20" align="left"
-		 alt="My Outlook"
-		 src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/microsoftoutlook.svg">
+    <img width="20" align="left"
+        alt="My Outlook"
+        src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/microsoftoutlook.svg">
+</a>
+<br/>
+
+### TheAnh Vu
+<a href="https://github.com/theanh28">
+    <img width="20" align="left"
+        alt="My GitHub profile"
+        src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg">
+</a>
+<a href="https://www.linkedin.com/in/anh-alex-vu-5024111ab/">
+    <img width="20" align="left"
+        alt="My LinkedIn profile"
+        src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg">
+</a>
+<a href="mailto:theanhvu02.101@gmail.com">
+    <img width="20" align="left"
+        alt="My Gmail"
+        src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg">
 </a>
