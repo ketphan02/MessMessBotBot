@@ -1,6 +1,7 @@
 import { StageTwoMenu } from "../persistent_menu";
 import { title_arr } from "../requests/POST";
 import sendData from "../sendData/send";
+import startingStage from "./starting";
 import stageZero from "./zero";
 
 const stageOne = async (sender_id: String, title: String) =>
@@ -26,10 +27,9 @@ const stageOne = async (sender_id: String, title: String) =>
     }
     else if (title == "Go back")
     {
-        const req = arr[0];
-        console.log(req);
-        arr.pop()
-        await stageZero(sender_id, req);
+        // arr.pop()
+        // const req = arr[arr.length];
+        await startingStage(sender_id);
     }
 
     title_arr[index].arr = arr;

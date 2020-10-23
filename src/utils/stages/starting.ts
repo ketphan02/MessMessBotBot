@@ -1,4 +1,3 @@
-import { title } from "process";
 import { StartingMenu } from "../persistent_menu";
 import { title_arr } from "../requests/POST";
 import sendData from "../sendData/send";
