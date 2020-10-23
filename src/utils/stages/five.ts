@@ -22,7 +22,7 @@ const stageFive = async (sender_id: String, title: String) =>
     }
     else if (title == "Go back")
     {
-        const req = arr[-1];
+        const req = arr[4];
         arr.pop()
         await stageFour(sender_id, req);
     }

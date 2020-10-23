@@ -21,9 +21,9 @@ const stageSeven = async (sender_id: String, title: String) =>
     }
     else if (title == "Go back")
     {
-        const req = arr[-1];
+        const req = arr[arr.length - 1];
         arr.pop()
-        if (req === "Extra customization") await stageSix01(sender_id, req);
+        if (arr.length === 7) await stageSix01(sender_id, req);
         else await stageSix(sender_id, req);
     }
 

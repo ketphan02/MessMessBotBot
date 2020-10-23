@@ -31,7 +31,7 @@ const stageSix = async (sender_id: String, title: String) =>
     }
     else if (title == "Go back")
     {
-        const req = arr[-1];
+        const req = arr[5];
         arr.pop()
         await stageFive(sender_id, req);
     }
