@@ -24,7 +24,7 @@ export default async function sendImage(sender_id: String, imglink: String)
 
     request(
     {
-        url: `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/message_attachments`,
+        url: `https://graph.facebook.com/v${process.env.FB_GRAPH_API_VERSION}/me/messages`,
         qs:
         {
             "access_token": process.env.PAGE_ACCESS_TOKEN
