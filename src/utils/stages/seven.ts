@@ -22,7 +22,7 @@ const stageSeven = async (sender_id: String, title: String) =>
     else if (title == "Go back")
     {
         arr.pop()
-        const req = arr[arr.length];
+        const req = arr[arr.length - 1];
         if (arr.length === 6) await stageSix(sender_id, req);
         else await stageFive(sender_id, req);
     }
