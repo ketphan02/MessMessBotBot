@@ -95,3 +95,7 @@ https://developers.facebook.com/docs/messenger-platform
 
 - Discord. "Discord.JS". <br/>
 https://discord.js.org
+
+- Seeklogo. Two vector logo files of Messenger and Discord.<br/>
+    - https://seeklogo.com/vector-logo/275121/discord
+    - https://seeklogo.com/vector-logo/271544/facebook-messenger

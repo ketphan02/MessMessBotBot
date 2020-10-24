@@ -16,7 +16,7 @@ const stageOne = async (sender_id: String, title: String) =>
 
         const msg: String = "Welcome to Discord Bot Guild.\n" +
         "I will guild step-by-step to create your Discord Bot.\n\n" +
-        "First, follow this link (https://j2c.cc/customizediscordbot), scroll down and hit the purple button\n" +
+        "First, follow this link (https://j2c.cc/deploybot)\n" +
         "The password for the link is DiscordBot";
 
         await sendData(sender_id, msg);
