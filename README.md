@@ -21,6 +21,10 @@ MESSmessbotBOT is a chatbot which helps people create other kinds of chat bot ea
 Caution: All the variables must be filled in to run the bot
 ```
 
+## Depedency
+
+<img src='https://github-readme-stats.vercel.app/api/pin/?username=ketphan02&repo=customizable-discord-bot&theme=graywhite' />
+
 ## Setup the bot:
 1. Press the Deploy to Heroku Button above and name your backend.
 2. Create your application at [Facebook Developer Site](https://developers.facebook.com) and fill in the App Display Name.
