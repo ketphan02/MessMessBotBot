@@ -162,7 +162,7 @@ const StageTwoMenu = (sender_id: String) =>
             [
                 {
                     type: "postback",
-                    title: "Pressed the button",
+                    title: "Accessed the link",
                     payload: "STEP 2"
                 },
                 {
