@@ -1,7 +1,0 @@
-{
-    "name": "DiscordTS",
-    "description": "A Discord Music Bot Template",
-    "repository": "https://github.com/ketphan02/customizable-discord-bot",
-    "logo": "https://ibb.co/ZGD5jrc",
-    "keywords": ["node", "express", "discord"]
-  }
