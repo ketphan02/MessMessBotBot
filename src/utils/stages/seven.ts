@@ -14,7 +14,8 @@ const stageSeven = async (sender_id: String, title: String) =>
         StageFinalMenu(sender_id);
         arr.push(title);
 
-        const msg: String = "Congratulation! Your bot is ready to go.\n\n" +
+        const msg: String = "Congratulation! Your bot is ready to go.\n" +
+        "To start yout bot, type !play <SONG-YOU-WANT> in your Discord server\n\n" +
         "Thank you for using me, I appreciate that.";
 
         await sendData(sender_id, msg);
