@@ -23,7 +23,9 @@ Caution: All the variables must be filled in to run the bot
 
 ## Depedency
 
-<img src='https://github-readme-stats.vercel.app/api/pin/?username=ketphan02&repo=customizable-discord-bot&theme=graywhite' />
+<a href="https://github.com/ketphan02/customizable-discord-bot" >
+    <img src='https://github-readme-stats.vercel.app/api/pin/?username=ketphan02&repo=customizable-discord-bot&theme=graywhite' />
+</a>
 
 ## Setup the bot:
 1. Press the Deploy to Heroku Button above and name your backend.
