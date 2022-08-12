@@ -3,7 +3,7 @@ import { title_arr } from "../requests/POST";
 import sendData from "../sendData/send";
 import stageTwo from "./two";
 
-const stageFour = async (sender_id: String, title: String) =>
+const stageFour = async (sender_id: string, title: string) =>
 {
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     let arr = title_arr[index].arr;
@@ -13,7 +13,7 @@ const stageFour = async (sender_id: String, title: String) =>
         StageFiveMenu(sender_id);
         arr.push(title);
 
-        const msg: String = "Perfect! Now, please go to this link (https://discord.com/developers/applications), create new application, and fill your bot's display name.\n" +
+        const msg: string = "Perfect! Now, please go to this link (https://discord.com/developers/applications), create new application, and fill your bot's display name.\n" +
         "After that, go to the Bot tab and add new bot.\n" +
         `You will see a Copy button. Press it and continue.`;
 

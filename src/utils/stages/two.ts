@@ -3,7 +3,7 @@ import { title_arr } from "../requests/POST";
 import sendData from "../sendData/send";
 import stageZero from "./zero";
 
-const stageTwo = async (sender_id: String, title: String) =>
+const stageTwo = async (sender_id: string, title: string) =>
 {
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     let arr = title_arr[index].arr;

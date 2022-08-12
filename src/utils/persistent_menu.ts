@@ -36,9 +36,9 @@ const GetStartedButton = () =>
 
 /**
  * @description Contain 2 sections: Build bot and About us
- * @param {sender_id} String The id of the sender
+ * @param {sender_id} string The id of the sender
  */
-const StartingMenu = (sender_id: String) =>
+const StartingMenu = (sender_id: string) =>
 {
     const categories: Object =
     {
@@ -75,11 +75,11 @@ const StartingMenu = (sender_id: String) =>
     },
     (error, respond, body) =>
     {
+        console.log(body, respond.statusCode);
         if (!error && respond.statusCode == 200)
         {
             console.log("Successfully built the starting menu.");
-        }
-        else
+        } else
         {
             console.log(respond.statusCode);
             console.log("StartingMenu: " + error);
@@ -89,9 +89,9 @@ const StartingMenu = (sender_id: String) =>
 
 /**
  * @description Answer for question: "What kind of bot you want to build ?" The answers are Discord and Messenger
- * @param {sender_id} String The id of the sender
+ * @param {sender_id} string The id of the sender
  */
-const StageOneMenu = (sender_id: String) =>
+const StageOneMenu = (sender_id: string) =>
 {
     const categories: Object =
     {
@@ -147,9 +147,9 @@ const StageOneMenu = (sender_id: String) =>
 
 /**
  * @description Answer for question about heroku deployment.
- * @param {sender_id} String The id of the sender
+ * @param {sender_id} string The id of the sender
  */
-const StageTwoMenu = (sender_id: String) =>
+const StageTwoMenu = (sender_id: string) =>
 {
     const categories: Object =
     {
@@ -200,9 +200,9 @@ const StageTwoMenu = (sender_id: String) =>
 
 /**
  * @description Answer for question for stage 2.
- * @param {sender_id} String The id of the sender
+ * @param {sender_id} string The id of the sender
  */
-const StageThreeMenu = (sender_id: String) =>
+const StageThreeMenu = (sender_id: string) =>
 {
     const categories: Object =
     {
@@ -254,9 +254,9 @@ const StageThreeMenu = (sender_id: String) =>
 
 /**
  * @description Answer for question: "Have you pressed reveal config vars".
- * @param {sender_id} String The id of the sender
+ * @param {sender_id} string The id of the sender
  */
-const StageFourMenu = (sender_id: String) =>
+const StageFourMenu = (sender_id: string) =>
 {
     const categories: Object =
     {
@@ -308,9 +308,9 @@ const StageFourMenu = (sender_id: String) =>
 
 /**
  * @description Answer if people have their Discord Token.
- * @param {sender_id} String The id of the sender
+ * @param {sender_id} string The id of the sender
  */
-const StageFiveMenu = (sender_id: String) =>
+const StageFiveMenu = (sender_id: string) =>
 {
     const categories: Object =
     {
@@ -362,9 +362,9 @@ const StageFiveMenu = (sender_id: String) =>
 
 /**
  * @description Answer for question are you done filling in the variables.
- * @param {sender_id} String The id of the sender
+ * @param {sender_id} string The id of the sender
  */
-const StageSixMenu = (sender_id: String) =>
+const StageSixMenu = (sender_id: string) =>
 {
     const categories: Object =
     {
@@ -421,9 +421,9 @@ const StageSixMenu = (sender_id: String) =>
 
 /**
  * @description Extra variables customization.
- * @param {sender_id} String The id of the sender
+ * @param {sender_id} string The id of the sender
  */
-const StageSix01Menu = (sender_id: String) =>
+const StageSix01Menu = (sender_id: string) =>
 {
     const categories: Object =
     {
@@ -475,9 +475,9 @@ const StageSix01Menu = (sender_id: String) =>
 
 /**
  * @description "Answer for question does your bot have enough permission ?".
- * @param {sender_id} String The id of the sender
+ * @param {sender_id} string The id of the sender
  */
-const StageSevenMenu = (sender_id: String) =>
+const StageSevenMenu = (sender_id: string) =>
 {
     const categories: Object =
     {
@@ -529,9 +529,9 @@ const StageSevenMenu = (sender_id: String) =>
 
 /**
  * @description "Answer for question does your bot have enough permission ?".
- * @param {sender_id} String The id of the sender
+ * @param {sender_id} string The id of the sender
  */
-const StageFinalMenu = (sender_id: String) =>
+const StageFinalMenu = (sender_id: string) =>
 {
     const categories: Object =
     {

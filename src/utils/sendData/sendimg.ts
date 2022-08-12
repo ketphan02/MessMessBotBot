@@ -1,6 +1,6 @@
 import request from "request";
 
-export default async function sendImage(sender_id: String, imglink: String)
+export default async function sendImage(sender_id: string, imglink: string)
 {
     const data =
     {

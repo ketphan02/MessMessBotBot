@@ -4,7 +4,7 @@ import sendData from "../sendData/send";
 import stageFive from "./five";
 import stageSix from "./six";
 
-const stageSeven = async (sender_id: String, title: String) =>
+const stageSeven = async (sender_id: string, title: string) =>
 {
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     let arr = title_arr[index].arr;
@@ -14,7 +14,7 @@ const stageSeven = async (sender_id: String, title: String) =>
         StageFinalMenu(sender_id);
         arr.push(title);
 
-        const msg: String = "Congratulation! Your bot is ready to go.\n" +
+        const msg: string = "Congratulation! Your bot is ready to go.\n" +
         "To start yout bot, type !play <SONG-YOU-WANT> in your Discord server\n\n" +
         "Thank you for using me, I appreciate that.";
 

@@ -2,7 +2,7 @@ import { StageOneMenu } from "../persistent_menu";
 import { title_arr } from "../requests/POST";
 import sendData from "../sendData/send";
 
-const stageZero = async (sender_id: String, title: String) =>
+const stageZero = async (sender_id: string, title: string) =>
 {
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     let arr = title_arr[index].arr;

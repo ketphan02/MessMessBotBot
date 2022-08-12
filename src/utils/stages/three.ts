@@ -3,7 +3,7 @@ import { title_arr } from "../requests/POST";
 import sendData from "../sendData/send";
 import stageOne from "./one";
 
-const stageThree = async (sender_id: String, title: String) =>
+const stageThree = async (sender_id: string, title: string) =>
 {
     const index = title_arr.map(e => e.user_id).indexOf(sender_id);
     let arr = title_arr[index].arr;
@@ -13,7 +13,7 @@ const stageThree = async (sender_id: String, title: String) =>
         StageFourMenu(sender_id);
         arr.push(title);
 
-        const msg: String = "Great!\n" +
+        const msg: string = "Great!\n" +
         "Let's go to the Settings tab. Under it, you will see a button called Reveal Config Vars in section Config Vars. Press it!";
 
         await sendData(sender_id, msg);
